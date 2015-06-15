@@ -1,0 +1,7 @@
+bin/
+WEB-INF/src/utility/*
+WEB-INF/classes/utility/*
+css/.gitkeep
+img/.gitkeep
+js/.gitkeep
+jsp/.gitkeep
