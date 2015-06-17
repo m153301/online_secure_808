@@ -3,23 +3,6 @@ SET SESSION FOREIGN_KEY_CHECKS=0;
 
 /* Create Tables */
 
-CREATE TABLE worker
-(
-	user_id varchar(12) NOT NULL UNIQUE,
-	PRIMARY KEY (user_id)
-);
-
-
-CREATE TABLE item
-(
-	item_id int(12) NOT NULL UNIQUE AUTO_INCREMENT,
-	item_name varchar(50) UNIQUE,
-	item_price int(12),
-	item_stock int(3),
-	PRIMARY KEY (item_id)
-);
-
-
 CREATE TABLE recommend
 (
 	item_id int(12) NOT NULL UNIQUE,
@@ -29,22 +12,9 @@ CREATE TABLE recommend
 );
 
 
-CREATE TABLE purchace
+CREATE TABLE worker
 (
-	purchace_id int NOT NULL UNIQUE AUTO_INCREMENT,
-	item_id int(12) NOT NULL,
-	buy_date date,
-	purchase_quantity int(3),
-	user_id varchar(12) NOT NULL,
-	PRIMARY KEY (purchace_id)
-);
-
-
-CREATE TABLE customer
-(
-	user_id varchar(12) NOT NULL,
-	tel bigint(12) unsigned zerofill,
-	creditcard_id int NOT NULL,
+	user_id varchar(12) NOT NULL UNIQUE,
 	PRIMARY KEY (user_id)
 );
 
@@ -69,26 +39,48 @@ CREATE TABLE ordered
 );
 
 
+CREATE TABLE purchace
+(
+	purchace_id int NOT NULL UNIQUE AUTO_INCREMENT,
+	item_id int(12) NOT NULL,
+	buy_date date,
+	purchase_quantity int(3),
+	user_id varchar(12) NOT NULL,
+	PRIMARY KEY (purchace_id)
+);
+
+
+CREATE TABLE item
+(
+	item_id int(12) NOT NULL UNIQUE AUTO_INCREMENT,
+	item_name varchar(50) UNIQUE,
+	item_price int(12),
+	item_stock int(3),
+	PRIMARY KEY (item_id)
+);
+
+
+CREATE TABLE customer
+(
+	user_id varchar(12) NOT NULL,
+	tel bigint(12) unsigned zerofill,
+	creditcard_id int NOT NULL,
+	PRIMARY KEY (user_id)
+);
+
+
 CREATE TABLE user
 (
 	user_id varchar(12) NOT NULL UNIQUE,
 	password varchar(64) NOT NULL,
 	user_name varchar(50) NOT NULL,
-	role varchar(0) NOT NULL,
+	role varchar(20) NOT NULL,
 	PRIMARY KEY (user_id)
 );
 
 
 
 /* Create Foreign Keys */
-
-ALTER TABLE ordered
-	ADD FOREIGN KEY (user_id)
-	REFERENCES worker (user_id)
-	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
-;
-
 
 ALTER TABLE recommend
 	ADD FOREIGN KEY (user_id)
@@ -99,6 +91,30 @@ ALTER TABLE recommend
 
 
 ALTER TABLE ordered
+	ADD FOREIGN KEY (user_id)
+	REFERENCES worker (user_id)
+	ON UPDATE RESTRICT
+	ON DELETE RESTRICT
+;
+
+
+ALTER TABLE customer
+	ADD FOREIGN KEY (creditcard_id)
+	REFERENCES creditcard (creditcard_id)
+	ON UPDATE RESTRICT
+	ON DELETE RESTRICT
+;
+
+
+ALTER TABLE ordered
+	ADD FOREIGN KEY (item_id)
+	REFERENCES item (item_id)
+	ON UPDATE RESTRICT
+	ON DELETE RESTRICT
+;
+
+
+ALTER TABLE recommend
 	ADD FOREIGN KEY (item_id)
 	REFERENCES item (item_id)
 	ON UPDATE RESTRICT
@@ -107,14 +123,6 @@ ALTER TABLE ordered
 
 
 ALTER TABLE purchace
-	ADD FOREIGN KEY (item_id)
-	REFERENCES item (item_id)
-	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
-;
-
-
-ALTER TABLE recommend
 	ADD FOREIGN KEY (item_id)
 	REFERENCES item (item_id)
 	ON UPDATE RESTRICT
@@ -131,8 +139,8 @@ ALTER TABLE purchace
 
 
 ALTER TABLE customer
-	ADD FOREIGN KEY (creditcard_id)
-	REFERENCES creditcard (creditcard_id)
+	ADD FOREIGN KEY (user_id)
+	REFERENCES user (user_id)
 	ON UPDATE RESTRICT
 	ON DELETE RESTRICT
 ;
@@ -146,9 +154,4 @@ ALTER TABLE worker
 ;
 
 
-ALTER TABLE customer
-	ADD FOREIGN KEY (user_id)
-	REFERENCES user (user_id)
-	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
-;
+
