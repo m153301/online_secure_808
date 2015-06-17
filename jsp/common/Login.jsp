@@ -16,6 +16,7 @@
 			<tr>
 				<td style="text-align: center; width: 180px; height: 60px;" rowspan="1" colspan="2">ログイン</td>
 			</tr>
+			<form action="./LoginServlet" method="post">
 			<tr>
 				<td style="text-align: center; width: 100px; height: 60px;">ID</td>
 				<td style="text-align: center; width: 260px; height: 60px;"><input name="id" type="text"></td>
@@ -29,6 +30,7 @@
 					<button onclick="location.href='CustomerTop.jsp'" name="enter">Enter</button>
 				</td>
 			</tr>
+			</form>
 		</tbody>
 	</table>
 	<br>
