@@ -26,7 +26,7 @@ public class LogOutServlet extends HttpServlet{
 		    session.invalidate();
 		    }
 
-		    response.sendRedirect(response.encodeRedirectURL("/jsp/common/Login.jsp"));
+		    response.sendRedirect(response.encodeRedirectURL("/jsp/common/LogOut.jsp"));
 
 		}
 	}
