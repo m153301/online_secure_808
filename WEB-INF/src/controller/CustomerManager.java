@@ -3,6 +3,7 @@ package controller;
 import java.sql.Connection;
 
 import dao.CustomerDAO;
+import dao.UserDAO;
 import beans.Creditcard;
 import beans.Customer;
 import beans.User;
@@ -15,40 +16,66 @@ public class CustomerManager{
 		
 	}
 	
-	public void Regist(String id, String tel, String type,
+	public int Regist(String id, String tel, String type,
 			String name, String password, String credit_number){
 		
-		//とりあえずuserテーブルを埋めに行く
-		//いくついでにid持って帰ってくる
-		String user_id = user_rel_regist(id, name, password);
+		//idのかぶりがないかチェックしに行く
+		int check = check(id);
 		
-		//次にカードテーブル埋めに行く
-		//とりあえずカードは一回格納する
-		creditregist(type, credit_number);
+		if(check == 0){
+			
+			//とりあえずuserテーブルを埋めに行く
+			//いくついでにid持って帰ってくる
+			String user_id = user_rel_regist(id, name, password);
+			
+			//次にカードテーブル埋めに行く
+			//とりあえずカードは一回格納する
+			creditregist(type, credit_number);
+			
+			Customer customer = new Customer();
+			customer.setUserId(id);
+			customer.setTel(tel);
+			
+			CustomerDAO dao = new CustomerDAO();
+			this.connection = dao.createConnection();
+			
+			//とりあえずcustomerテーブルを埋めに行く
+			dao.Regist(customer, this.connection);
+			dao.closeConnection(this.connection);
+			
+			this.connection = null;
+			
+			//customer.credit_idとcreditcard.credicard_idを関連づける
+			//そのためにまずcreditcard_idをnumberをもとにもってくる
+			int creditcard_id = cutomer_rel_regist(credit_number);
+			//持ってきたidとuser_idをもとにクレジットカードの登録を終える。
+			CardRegist(creditcard_id, user_id);
+			
+			dao.closeConnection(this.connection);
+			
+			this.connection = null;
+			
+			return 0;
+			
+		}
 		
-		Customer customer = new Customer();
-		customer.setUserId(id);
-		customer.setTel(tel);
+		else
+			return check;
 		
-		CustomerDAO dao = new CustomerDAO();
+		
+		
+	}
+	
+	private int check(String user_id) {
+		// TODO Auto-generated method stub
+		UserDAO dao = new UserDAO();
 		this.connection = dao.createConnection();
 		
-		//とりあえずcustomerテーブルを埋めに行く
-		dao.Regist(customer, this.connection);
-		dao.closeConnection(this.connection);
-		
-		this.connection = null;
-		
-		//customer.credit_idとcreditcard.credicard_idを関連づける
-		//そのためにまずcreditcard_idをnumberをもとにもってくる
-		int creditcard_id = cutomer_rel_regist(credit_number);
-		//持ってきたidとuser_idをもとにクレジットカードの登録を終える。
-		CardRegist(creditcard_id, user_id);
+		int check = dao.check(user_id, this.connection);
 		
 		dao.closeConnection(this.connection);
-		
 		this.connection = null;
-		
+		return check;
 	}
 
 
@@ -86,10 +113,10 @@ public class CustomerManager{
 		customer.setPassword(password);
 		customer.setRole("customer");
 		
-		CustomerDAO dao = new CustomerDAO();
+		UserDAO dao = new UserDAO();
 		this.connection = dao.createConnection();
 		
-		String user_id = dao.user_rel_regist(customer,this.connection);
+		String user_id = dao.Regist(customer,this.connection);
 		
 		dao.closeConnection(this.connection);
 		

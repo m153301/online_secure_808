@@ -38,7 +38,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td style="text-align: center; width: 180px; height: 60px;">顧客ID</td>
+				<td style="text-align: center; width: 180px; height: 60px;">顧客ID<br>${error}</td>
 				<td style="text-align: center; width: 180px; height: 60px;"><input name="customer_id" type="text"></td>
 			</tr>
 			<tr>

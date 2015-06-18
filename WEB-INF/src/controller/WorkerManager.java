@@ -67,14 +67,13 @@ public class WorkerManager{
 		worker.setPassword(password);
 		worker.setRole("worker");
 		
-		WorkerDAO dao = new WorkerDAO();
+		UserDAO dao = new UserDAO();
 		this.connection = dao.createConnection();
 		
-		String id = dao.user_rel_regist(worker, this.connection);
+		String id = dao.Regist(worker, this.connection);
 		
 		
-		
-		return null;
+		return id;
 	}
 	
 	

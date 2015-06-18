@@ -32,30 +32,6 @@ public class CustomerDAO extends DriverAccessor{
 		}
 	}
 
-	public String user_rel_regist(User customer, Connection connection) {
-		// TODO Auto-generated method stub
-		try{
-			String sql = "insert into user values (?,?,?,?)";
-			
-			PreparedStatement stmt = connection.prepareStatement(sql);
-			
-			stmt.setString(1,customer.getUserId());
-			stmt.setString(2, customer.getPassword());
-			stmt.setString(3, customer.getUserName());
-			stmt.setString(4, customer.getRole());
-			
-			stmt.executeUpdate();
-			stmt.close();
-			
-			return customer.getUserId();
-			
-		}catch(SQLException e){
-			e.printStackTrace();
-			return null;
-		}finally{
-			
-		}
-	}
 
 	public void credit_rel_regist(Creditcard customer, Connection connection) {
 		// TODO Auto-generated method stub

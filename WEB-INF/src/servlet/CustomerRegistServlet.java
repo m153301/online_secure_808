@@ -35,11 +35,22 @@ public class CustomerRegistServlet extends HttpServlet{
 			
 			//顧客登録しにいく
 			CustomerManager customer = new CustomerManager();
-			customer.Regist(user_id, tel, credit_type, customer_name, password,
+			
+			//idの重複チェック
+			int check = customer.Regist(user_id, tel, credit_type, customer_name, password,
 					credit_number);
 			
-			//完了画面へ
-			response.sendRedirect(response.encodeRedirectURL("./CustomerInfoRegistDone.jsp"));
+			if(check == 0){
+				
+				//完了画面へ
+				response.sendRedirect(response.encodeRedirectURL("./CustomerInfoRegistDone.jsp"));
+				
+			}
+			
+			else{
+				request.setAttribute("error", "idかぶってるよ");
+				getServletContext().getRequestDispatcher("/jsp/customer/CustomerInfoRegist.jsp").forward(request, response);
+			}
 			
 			
 			
