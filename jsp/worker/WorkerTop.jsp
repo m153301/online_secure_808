@@ -17,6 +17,7 @@
 		<a href="SaleBrowse.jsp">売上閲覧</a><br>
 		<br>
 		☆その他☆<br>
+		<a href="../worker/WorkerInfoRegist.jsp">店員登録</a><br>
 		<a href="LogOut.jsp">ログアウト</a><br>
 	</div>
 </body>

@@ -30,4 +30,14 @@
 		<servlet-name>CustomerRegistServlet</servlet-name>
 		<url-pattern>/jsp/customer/CustomerRegistServlet</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>WorkerRegistServlet</servlet-name>
+		<servlet-class>servlet.WorkerRegistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WorkerRegistServlet</servlet-name>
+		<url-pattern>/jsp/worker/WorkerRegistServlet</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
