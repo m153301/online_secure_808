@@ -1,5 +1,4 @@
 /servlet/
+/beans/
 /controller/
 /dao/
-/beans/
-/utility/

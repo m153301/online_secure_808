@@ -21,4 +21,13 @@
 		<servlet-name>LogOutServlet</servlet-name>
 		<url-pattern>/jsp/common/LogOutServlet</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CustomerRegistServlet</servlet-name>
+		<servlet-class>servlet.CustomerRegistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CustomerRegistServlet</servlet-name>
+		<url-pattern>/jsp/customer/CustomerRegistServlet</url-pattern>
+	</servlet-mapping>
 </web-app>
