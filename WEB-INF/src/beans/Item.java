@@ -6,7 +6,6 @@ public class Item {
 	private int itemPrice;
 	private int itemStock;
 	public Item(int itemId, String itemName, int itemPrice, int itemStock) {
-		super();
 		this.itemId = itemId;
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
