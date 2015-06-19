@@ -6,19 +6,20 @@ package servlet;
 /*****************************************************************************/
 
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import utility.HashPassword;
-import beans.Student;
-import control.AddStudent;
+import controller.RegistItemInfoManager;
+import beans.Item;
+
+
 
 public class RegistItemInfo extends HttpServlet{
 
+	private static final long serialVersionUID = 1L;
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		doPost(request, response);
@@ -30,33 +31,25 @@ public class RegistItemInfo extends HttpServlet{
 
 		request.setCharacterEncoding("UTF-8");
 
-		String studentID = request.getParameter("studentID");
-		String password = request.getParameter("password");
-		String name = request.getParameter("name");
-		String studentClass = request.getParameter("class");
-		int number = Integer.parseInt(request.getParameter("number"));
+		String item_name = request.getParameter("item_name");
+		int item_price = Integer.parseInt(request.getParameter("item_price"));
+		int item_stock = Integer.parseInt(request.getParameter("item_stock"));
 
-		String password2;
-		try {
-			password2 = HashPassword.getHash(studentID, password );
+		Item item = new Item(0,item_name,item_price,item_stock);
 
-		System.out.println(password2);
+		RegistItemInfoManager manager = new RegistItemInfoManager();
+
+		manager.registItemInfo(item);
 
 
-		Student student = new Student(studentID,password2,name,studentClass,number);
+//		HttpSession session = request.getSession(true);
+//		User user = (User)session.getAttribute("user");
 
-		AddStudent manager = new AddStudent();
-
-		manager.addStudent(student);
-
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
+//		String user_id = request.getParameter(user.getUserId());
 
 
 
-
-		response.sendRedirect(response.encodeRedirectURL("./dekita.jsp"));
+//		response.sendRedirect(response.encodeRedirectURL("./dekita.jsp"));
 	}
 
 }
