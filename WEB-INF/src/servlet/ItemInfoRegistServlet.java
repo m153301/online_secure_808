@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controller.RegistItemInfoManager;
+import controller.ItemInfoRegistManager;
 import beans.Item;
 
 
 
-public class RegistItemInfo extends HttpServlet{
+public class ItemInfoRegistServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 
@@ -37,7 +37,7 @@ public class RegistItemInfo extends HttpServlet{
 
 		Item item = new Item(0,item_name,item_price,item_stock);
 
-		RegistItemInfoManager manager = new RegistItemInfoManager();
+		ItemInfoRegistManager manager = new ItemInfoRegistManager();
 
 		manager.registItemInfo(item);
 

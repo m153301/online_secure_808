@@ -11,7 +11,7 @@ import java.sql.Connection;
 import dao.ItemDAO;
 import beans.Item;
 
-public class RegistItemInfoManager {
+public class ItemInfoRegistManager {
 
 	private Connection connection = null;
 
