@@ -1,44 +1,38 @@
 package beans;
 
 public class Item {
-	private int itmeId;
-	private String itmeName;
-	private int itmePrice;
-	private int itmeStock;
-
-	public Item(int itmeId, String itmeName, int itmePrice, int itmeStock) {
-		super();
-		this.itmeId = itmeId;
-		this.itmeName = itmeName;
-		this.itmePrice = itmePrice;
-		this.itmeStock = itmeStock;
+	private int itemId;
+	private String itemName;
+	private int itemPrice;
+	private int itemStock;
+	public Item(int itemId, String itemName, int itemPrice, int itemStock) {
+		this.itemId = itemId;
+		this.itemName = itemName;
+		this.itemPrice = itemPrice;
+		this.itemStock = itemStock;
 	}
-
-	public int getItmeId() {
-		return itmeId;
+	public int getItemId() {
+		return itemId;
 	}
-	public void setItmeId(int itmeId) {
-		this.itmeId = itmeId;
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
 	}
-	public String getItmeName() {
-		return itmeName;
+	public String getItemName() {
+		return itemName;
 	}
-	public void setItmeName(String itmeName) {
-		this.itmeName = itmeName;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
-	public int getItmePrice() {
-		return itmePrice;
+	public int getItemPrice() {
+		return itemPrice;
 	}
-	public void setItmePrice(int itmePrice) {
-		this.itmePrice = itmePrice;
+	public void setItemPrice(int itemPrice) {
+		this.itemPrice = itemPrice;
 	}
-	public int getItmeStock() {
-		return itmeStock;
+	public int getItemStock() {
+		return itemStock;
 	}
-	public void setItmeStock(int itmeStock) {
-		this.itmeStock = itmeStock;
+	public void setItemStock(int itemStock) {
+		this.itemStock = itemStock;
 	}
-
-
-
 }
