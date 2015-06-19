@@ -8,6 +8,7 @@
 	<div style="text-align: right;"><a href="WorkerTop.jsp">トップに戻る</a><br></div>
 	<br>
 	<br>
+	<form method="post" action="./ItemInfoRegistServlet">
 	<table style="text-align: left; width: 360px; margin-left: auto; margin-right: auto; height: 360px;" border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr align="center">
@@ -27,10 +28,11 @@
 			</tr>
 			<tr>
 				<td colspan="2" rowspan="1" style="text-align: center; width: 180px; height: 60px;">
-					<button onclick="location.href='ItemInfoRegistCheck.jsp'"name="enter">確認</button>
+					<input type="submit" name="enter" value="確認">
 				</td>
 			</tr>
 		</tbody>
 	</table>
+	</form>
 </body>
 </html>
