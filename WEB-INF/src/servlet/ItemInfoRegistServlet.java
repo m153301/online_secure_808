@@ -15,8 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import controller.ItemInfoRegistManager;
 import beans.Item;
 
-
-
 public class ItemInfoRegistServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
