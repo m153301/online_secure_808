@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controller.ItemInfoRegistManager;
 import beans.Item;
+import controller.ItemInfoRegistManager;
+
 
 public class ItemInfoRegistServlet extends HttpServlet{
 
@@ -33,7 +34,7 @@ public class ItemInfoRegistServlet extends HttpServlet{
 		int item_price = Integer.parseInt(request.getParameter("item_price"));
 		int item_stock = Integer.parseInt(request.getParameter("item_stock"));
 
-		Item item = new Item(0,item_name,item_price,item_stock);
+		Item item = new Item( 0, item_name, item_price, item_stock);
 
 		ItemInfoRegistManager manager = new ItemInfoRegistManager();
 

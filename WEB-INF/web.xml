@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-app_2_4.xsd"
 	version="2.4">
-</web-app>
+
 
    <servlet>
 		<servlet-name>ItemInfoRegist</servlet-name>
@@ -12,5 +12,8 @@
 
 	<servlet-mapping>
 		<servlet-name>ItemInfoRegist</servlet-name>
-		<url-pattern>/jsp/ItemInfoRegistServlet</url-pattern>
+		<url-pattern>/jsp/worker/ItemInfoRegistServlet</url-pattern>
 	</servlet-mapping>
+
+
+</web-app>
