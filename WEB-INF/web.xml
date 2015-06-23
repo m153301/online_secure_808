@@ -3,7 +3,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-app_2_4.xsd"
 	version="2.4">
-<<<<<<< HEAD
 
 
    <servlet>
@@ -16,10 +15,6 @@
 		<url-pattern>/jsp/worker/ItemInfoRegistServlet</url-pattern>
 	</servlet-mapping>
 
-
-</web-app>
-=======
-	
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>servlet.LoginServlet</servlet-class>
@@ -28,7 +23,7 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/jsp/common/LoginServlet</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>LogOutServlet</servlet-name>
 		<servlet-class>servlet.LogOutServlet</servlet-class>
@@ -38,4 +33,3 @@
 		<url-pattern>/jsp/common/LogOutServlet</url-pattern>
 	</servlet-mapping>
 </web-app>
->>>>>>> origin/develop

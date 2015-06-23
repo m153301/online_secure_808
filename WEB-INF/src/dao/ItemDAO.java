@@ -6,18 +6,22 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
 
 import utility.DriverAccessor;
 import beans.Item;
 
 public class ItemDAO extends DriverAccessor{
 
-	public void registItemInfoDAO(Item item, Connection connection){
+	public int registItemInfoDAO(Item item, Connection connection){
 
 		try{
 
-			String sql = "insert into student values(?,?,?,?)";
+			String sql = "insert into item values(?,?,?,?)";
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
 
@@ -26,6 +30,10 @@ public class ItemDAO extends DriverAccessor{
 			stmt.setInt(3, item.getItemPrice());
 			stmt.setInt(4, item.getItemStock());
 
+			String sql2 = "select item_id from item where item_name = '?'";
+			Statement stmt2 = connection.createStatement();
+			ResultSet rs = stmt.executeQuery(sql2);
+			stmt.setString(1, item.getItemName());
 
 			stmt.executeUpdate();
 
