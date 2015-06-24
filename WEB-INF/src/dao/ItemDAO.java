@@ -10,8 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
-
 import utility.DriverAccessor;
 import beans.Item;
 
@@ -19,6 +17,7 @@ public class ItemDAO extends DriverAccessor{
 
 	public int registItemInfoDAO(Item item, Connection connection){
 
+		int item_id = 0;
 		try{
 
 			String sql = "insert into item values(?,?,?,?)";
@@ -32,10 +31,13 @@ public class ItemDAO extends DriverAccessor{
 
 			String sql2 = "select item_id from item where item_name = '?'";
 			Statement stmt2 = connection.createStatement();
-			ResultSet rs = stmt.executeQuery(sql2);
+			ResultSet rs = stmt2.executeQuery(sql2);
 			stmt.setString(1, item.getItemName());
 
-			stmt.executeUpdate();
+			rs.next();
+			item_id = rs.getInt("item_id");
+
+
 
 		}catch(SQLException e){
 
@@ -44,5 +46,6 @@ public class ItemDAO extends DriverAccessor{
 		} finally {
 
 		}
+	return item_id;
 	}
 }
