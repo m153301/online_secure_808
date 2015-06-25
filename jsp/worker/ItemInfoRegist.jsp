@@ -28,7 +28,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" rowspan="1" style="text-align: center; width: 180px; height: 60px;">
-					<input type="submit" name="enter" value="確認">
+					<input type="submit" name="enter" value="登録">
 				</td>
 			</tr>
 		</tbody>

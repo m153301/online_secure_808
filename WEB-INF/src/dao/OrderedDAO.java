@@ -12,6 +12,7 @@ import utility.DriverAccessor;
 
 public class OrderedDAO extends DriverAccessor{
 
+	//発注した商品を格納する
 	public void registItemLog(Ordered ordered, Connection connection){
 
 		try{

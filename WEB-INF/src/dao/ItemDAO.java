@@ -15,6 +15,8 @@ import beans.Item;
 
 public class ItemDAO extends DriverAccessor{
 
+
+	//商品を登録する
 	public void registItemInfoDAO(Item item, Connection connection){
 		try{
 
@@ -39,6 +41,7 @@ public class ItemDAO extends DriverAccessor{
 		}
 	}
 
+	//登録した商品の商品IDを検索する
 	public int selectItemIdDAO(String item_name, Connection connection){
 
 		int item_id=0;

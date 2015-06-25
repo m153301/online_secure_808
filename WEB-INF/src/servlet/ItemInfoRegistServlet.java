@@ -2,7 +2,7 @@
 package servlet;
 
 /*****************************************************************************/
-//		商品を追加するservlet
+//		商品を登録するservlet
 /*****************************************************************************/
 
 import java.io.IOException;
@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.Item;
 import beans.Ordered;
-import beans.User;
 import controller.ItemInfoRegistManager;
 
 
@@ -34,7 +33,7 @@ public class ItemInfoRegistServlet extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 
 		//まず商品をItemテーブルに格納。最初は発注した数が在庫になる。
-		//同時にitem_idを返すようにする
+		//item_idを返すようにする
 		String item_name = request.getParameter("item_name");
 		int item_price = Integer.parseInt(request.getParameter("item_price"));
 		int item_stock = Integer.parseInt(request.getParameter("item_stock"));
@@ -44,7 +43,7 @@ public class ItemInfoRegistServlet extends HttpServlet{
 		ItemInfoRegistManager manager = new ItemInfoRegistManager();
 		int item_id = manager.registItemInfo(item);
 
-		//次に、誰が発注したかを記録する。
+		//次に、いつ誰が何をいくつ登録・発注したかを記録する。
 
 		//セッションを実装したらここを使う
 		//セッションからユーザIDを取得

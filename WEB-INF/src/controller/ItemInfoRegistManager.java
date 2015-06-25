@@ -19,7 +19,7 @@ public class ItemInfoRegistManager {
 
 
 	//Itemテーブルに発注した商品を格納
-	//item_idを検索し、返り値として返す
+	//格納した商品のitem_idを検索し、返り値として返す
 	public int registItemInfo(Item item){
 		ItemDAO itemDAO = new ItemDAO();
 		this.connection = itemDAO.createConnection();
@@ -33,6 +33,8 @@ public class ItemInfoRegistManager {
 		return item_id;
 	}
 
+
+	//登録した商品を発注ログに格納する
 	public void registItemLog(Ordered ordered) {
 		OrderedDAO orderedDAO = new OrderedDAO();
 		this.connection = orderedDAO.createConnection();
