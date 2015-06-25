@@ -38,6 +38,7 @@ public class ItemInfoRegistManager {
 		this.connection = orderedDAO.createConnection();
 
 		orderedDAO.registItemLog(ordered, connection);
+		orderedDAO.closeConnection(this.connection);
 
 		this.connection = null;
 

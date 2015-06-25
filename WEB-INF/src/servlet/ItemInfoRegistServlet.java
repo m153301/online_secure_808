@@ -12,7 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import beans.Item;
 import beans.Ordered;
@@ -45,8 +44,6 @@ public class ItemInfoRegistServlet extends HttpServlet{
 		ItemInfoRegistManager manager = new ItemInfoRegistManager();
 		int item_id = manager.registItemInfo(item);
 
-		System.out.println("Itemid = " + item_id);
-
 		//次に、誰が発注したかを記録する。
 
 		//セッションを実装したらここを使う
@@ -54,12 +51,10 @@ public class ItemInfoRegistServlet extends HttpServlet{
 		//HttpSession session = request.getSession(true);
 		//User user = (User)session.getAttribute("user");
 
-		//セッションを実装してない間はここを使う
-		User user = new User("mikomiko", "aaa", "mikoto", "bbb");
-
 		Date date = new Date();
 
-		Ordered ordered = new Ordered(0, user.getUserId(), item_id, item_stock, date);
+		//セッションを実装していないので、user_idは指定
+		Ordered ordered = new Ordered(0, "3510", item_id, item_stock, date);
 
 		ItemInfoRegistManager manager2 = new ItemInfoRegistManager();
 		manager2.registItemLog(ordered);

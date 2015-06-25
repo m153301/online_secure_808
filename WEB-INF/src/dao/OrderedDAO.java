@@ -26,11 +26,21 @@ public class OrderedDAO extends DriverAccessor{
 			java.util.Date d = new java.util.Date();
 			java.sql.Date d2 = new java.sql.Date(d.getTime());
 
+			/*
+			System.out.println(ordered.getOrderId());
+			System.out.println(ordered.getUserId());
+			System.out.println(ordered.getItemId());
+			System.out.println(ordered.getOrderQuantity());
+			System.out.println(d2);
+			*/
+
 			stmt.setInt(1, ordered.getOrderId());
 			stmt.setString(2, ordered.getUserId());
 			stmt.setInt(3, ordered.getItemId());
-			stmt.setInt(4, ordered.getOrderQuantity());
-			stmt.setDate(5, d2);
+			stmt.setDate(4, d2);
+			stmt.setInt(5, ordered.getOrderQuantity());
+
+			stmt.executeUpdate();
 
 			//  終了処理
 			stmt.close();
