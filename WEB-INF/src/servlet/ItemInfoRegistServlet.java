@@ -45,18 +45,24 @@ public class ItemInfoRegistServlet extends HttpServlet{
 		ItemInfoRegistManager manager = new ItemInfoRegistManager();
 		int item_id = manager.registItemInfo(item);
 
+		System.out.println("Itemid = " + item_id);
 
 		//次に、誰が発注したかを記録する。
+
+		//セッションを実装したらここを使う
 		//セッションからユーザIDを取得
-		HttpSession session = request.getSession(true);
-		User user = (User)session.getAttribute("user");
+		//HttpSession session = request.getSession(true);
+		//User user = (User)session.getAttribute("user");
+
+		//セッションを実装してない間はここを使う
+		User user = new User("mikomiko", "aaa", "mikoto", "bbb");
 
 		Date date = new Date();
+
 		Ordered ordered = new Ordered(0, user.getUserId(), item_id, item_stock, date);
 
 		ItemInfoRegistManager manager2 = new ItemInfoRegistManager();
 		manager2.registItemLog(ordered);
-
 
 		response.sendRedirect(response.encodeRedirectURL("./ItemInfoRegistDone.jsp"));
 	}

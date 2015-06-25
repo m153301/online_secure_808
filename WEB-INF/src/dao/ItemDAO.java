@@ -52,6 +52,7 @@ public class ItemDAO extends DriverAccessor{
 			item_id = rs.getInt("item_id");
 
 			stmt.close();
+			rs.close();
 		}catch(SQLException e){
 
 			e.printStackTrace();

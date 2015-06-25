@@ -7,15 +7,11 @@ package controller;
 
 
 import java.sql.Connection;
-import java.util.Date;
-
-import javax.servlet.http.HttpSession;
 
 import dao.ItemDAO;
 import dao.OrderedDAO;
 import beans.Item;
 import beans.Ordered;
-import beans.User;
 
 public class ItemInfoRegistManager {
 
@@ -29,9 +25,8 @@ public class ItemInfoRegistManager {
 		this.connection = itemDAO.createConnection();
 
 		itemDAO.registItemInfoDAO(item, connection);
-		itemDAO.closeConnection(this.connection);
-
 		int item_id = itemDAO.selectItemIdDAO(item.getItemName(),connection);
+		itemDAO.closeConnection(this.connection);
 
 		this.connection = null;
 
