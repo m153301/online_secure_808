@@ -1,7 +1,5 @@
 bin/
 WEB-INF/src/utility/DriverAccessor.java
 WEB-INF/src/utility/PasswordEncryption.java
-WEB-INF/classes/utility/DriverAccessor.class
-WEB-INF/classes/utility/PasswordEncryption.class
 WEB-INF/classes/
 work/
