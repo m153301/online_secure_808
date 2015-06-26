@@ -1,4 +1,3 @@
-
 -- MySQL dump 10.13  Distrib 5.6.24, for osx10.10 (x86_64)
 --
 -- Host: localhost    Database: secure
@@ -268,4 +267,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-24  9:59:08
+-- Dump completed on 2015-06-19 12:59:58

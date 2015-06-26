@@ -1,2 +1,5 @@
-/dao/
-/beans/
+/beans
+/controller
+/dao
+/servlet
+
