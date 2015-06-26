@@ -5,6 +5,7 @@ public class Item {
 	private String itemName;
 	private int itemPrice;
 	private int itemStock;
+
 	public Item(int itemId, String itemName, int itemPrice, int itemStock) {
 		this.itemId = itemId;
 		this.itemName = itemName;
@@ -35,5 +36,5 @@ public class Item {
 	public void setItemStock(int itemStock) {
 		this.itemStock = itemStock;
 	}
-	
+
 }

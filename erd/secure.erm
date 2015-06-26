@@ -41,7 +41,7 @@
 		<suspend_validator>false</suspend_validator>
 		<export_setting>
 			<category_name_to_export>全体</category_name_to_export>
-			<ddl_output>/Users/mikoto/git/online_808/erd/secure.sql</ddl_output>
+			<ddl_output>/Users/mikoto/git/online_secure_808/erd/secure.sql</ddl_output>
 			<excel_output></excel_output>
 			<excel_template></excel_template>
 			<image_output></image_output>
@@ -113,7 +113,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2015-05-10 15:01:14</creation_date>
-			<updated_date>2015-06-17 11:58:08</updated_date>
+			<updated_date>2015-06-17 12:12:26</updated_date>
 			<model_property>
 				<name>プロジェクト名</name>
 				<value></value>
