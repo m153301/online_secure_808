@@ -15,6 +15,16 @@
 		<url-pattern>/jsp/worker/ItemInfoRegistServlet</url-pattern>
 	</servlet-mapping>
 
+	   <servlet>
+		<servlet-name>SaleBrowse</servlet-name>
+		<servlet-class>servlet.SaleBrowseServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SaleBrowse</servlet-name>
+		<url-pattern>/jsp/worker/SaleBrowseServlet</url-pattern>
+	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>servlet.LoginServlet</servlet-class>

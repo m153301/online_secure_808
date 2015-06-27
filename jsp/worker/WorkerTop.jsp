@@ -14,7 +14,9 @@
 		<a href="RecommendRegist.jsp">おすすめ登録</a><br>
 		<br>
 		☆売上☆<br>
-		<a href="SaleBrowse.jsp">売上閲覧</a><br>
+		<form method="post" action="./SaleBrowseServlet">
+		<input type="submit" name="enter" value="確認">
+		</form>
 		<br>
 		☆その他☆<br>
 		<a href="LogOut.jsp">ログアウト</a><br>
