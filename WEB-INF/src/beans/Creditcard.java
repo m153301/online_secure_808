@@ -13,6 +13,10 @@ public class Creditcard {
 		this.creditcardNumber = creditcardNumber;
 	}
 
+	public Creditcard() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getCreditcardId() {
 		return creditcardId;
 	}

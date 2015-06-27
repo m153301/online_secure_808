@@ -8,5 +8,12 @@
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="/Users/shu/Documents/workspace/online_secure_808/WEB-INF/lib/commons-lang3-3.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/shu/Documents/workspace/online_secure_808/WEB-INF/lib/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="/Users/shu/Documents/workspace/online_secure_808/WEB-INF/lib/commons-io-2.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/shu/Documents/workspace/online_secure_808/WEB-INF/lib/commons-io-2.4-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/shu/Documents/workspace/online_secure_808/WEB-INF/lib/commons-io-2.4-test-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/shu/Documents/workspace/online_secure_808/WEB-INF/lib/commons-io-2.4-tests.jar"/>
+	<classpathentry kind="lib" path="/Users/shu/Documents/workspace/online_secure_808/WEB-INF/lib/commons-io-2.4.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>

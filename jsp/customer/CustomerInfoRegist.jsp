@@ -7,6 +7,7 @@
 <body>
 	<br>
 	<br>
+	<form action="./CustomerRegistServlet", methd="post">
 	<table style="text-align: left; width: 360px; margin-left: auto; margin-right: auto; height: 480px;" border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr align="center">
@@ -37,7 +38,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td style="text-align: center; width: 180px; height: 60px;">顧客ID</td>
+				<td style="text-align: center; width: 180px; height: 60px;">顧客ID<br>${error}</td>
 				<td style="text-align: center; width: 180px; height: 60px;"><input name="customer_id" type="text"></td>
 			</tr>
 			<tr>
@@ -51,5 +52,6 @@
 			</tr>
 		</tbody>
 	</table>
+	</form>
 </body>
 </html>

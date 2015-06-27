@@ -9,7 +9,7 @@
 <br>
 	<div class="title">
 		☆商品☆<br>
-		<a href="ItemInfoRegist.jsp">商品登録</a><br>
+		<a href="../worker/ItemInfoRegist.jsp">商品登録</a><br>
 		<a href="ItemInfoChangeList.jsp">商品編集</a><br>
 		<a href="RecommendRegist.jsp">おすすめ登録</a><br>
 		<br>
@@ -19,6 +19,7 @@
 		</form>
 		<br>
 		☆その他☆<br>
+		<a href="../worker/WorkerInfoRegist.jsp">店員登録</a><br>
 		<a href="LogOut.jsp">ログアウト</a><br>
 	</div>
 </body>

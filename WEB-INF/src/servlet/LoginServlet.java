@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import utility.PasswordEncryption;
 import beans.Ip_lock;
 import beans.User;
@@ -31,6 +33,7 @@ public class LoginServlet extends HttpServlet{
 		
 		InetAddress addr = InetAddress.getLocalHost();
 		String ip = String.valueOf(addr.getHostAddress());
+		
 		
 		//ipアドレスが格納される前に同じのがないかみたい
 		//そのままipアドレス登録しちゃう

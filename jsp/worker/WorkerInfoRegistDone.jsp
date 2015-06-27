@@ -13,7 +13,7 @@
 		<br>
 		<br>
 		<br>
-		<a href="Login.jsp">ログインする</a><br>
+		<a href="../common/Login.jsp">ログインする</a><br>
 	</div>
 </body>
 </html>
