@@ -2,14 +2,18 @@ package beans;
 
 public class Customer {
 	private String userId;
-	private int tel;
+	private String tel;
 	private int creditcardId;
 
-	public Customer(String userId, int tel, int creditcardId) {
+	public Customer(String userId, String tel, int creditcardId) {
 		super();
 		this.userId = userId;
 		this.tel = tel;
 		this.creditcardId = creditcardId;
+	}
+
+	public Customer() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getUserId() {
@@ -20,11 +24,11 @@ public class Customer {
 		this.userId = userId;
 	}
 
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
