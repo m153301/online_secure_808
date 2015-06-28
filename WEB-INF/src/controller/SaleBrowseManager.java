@@ -23,7 +23,7 @@ public class SaleBrowseManager {
 
 	private Connection connection = null;
 
-	public ResultSet saleBrowse(){
+	public ArrayList<Purchace> saleBrowse(){
 		PurchaceDAO purchaceDAO = new PurchaceDAO();
 		this.connection = purchaceDAO.createConnection();
 
@@ -34,17 +34,19 @@ public class SaleBrowseManager {
 
 		for(int i=0; i!=alllist.size(); i++){
 			for(int j= 0; j!=quantitylist.size(); j++){
-				if(alllist.get(i).equals(quantitylist.get(j))){
-
-
+				if(alllist.get(i).getBuyDate().equals(quantitylist.get(j).getBuyDate()) && alllist.get(i).getItemId() == quantitylist.get(j).getItemId()){
+					int quantity = alllist.get(i).getPurchaceQuantity() + quantitylist.get(j).getPurchaceQuantity();
+					quantitylist.get(j).setPurchaceQuantity(quantity);
+				}
+				else{
+					quantitylist.add(alllist.get(i));
 				}
 			}
-
 		}
 
 		this.connection = null;
 
-		return item_id;
+		return quantitylist;
 	}
 
 
