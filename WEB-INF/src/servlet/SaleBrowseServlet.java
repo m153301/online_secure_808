@@ -6,13 +6,14 @@ package servlet;
 /*****************************************************************************/
 
 import java.io.IOException;
-import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.Sale;
 import controller.SaleBrowseManager;
 
 public class SaleBrowseServlet extends HttpServlet{
@@ -30,9 +31,10 @@ public class SaleBrowseServlet extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 
 		SaleBrowseManager manager = new SaleBrowseManager();
-		ResultSet saleList = manager.saleBrowse();
+		ArrayList<Sale> saleList = manager.saleBrowse();
 
-		response.sendRedirect(response.encodeRedirectURL("./SaleBrowse.jsp"));
+		request.setAttribute("SaleList", saleList);
+		getServletContext().getRequestDispatcher("/jsp/SaleBrowse.jsp").forward(request, response);
 	}
 
 }

@@ -3,7 +3,6 @@ package beans;
 import java.util.Date;
 
 public class Sale {
-	private int itemId;
 	private String itemName;
 	private Date buyDate;
 	private int purchaceQuantity;
@@ -11,22 +10,13 @@ public class Sale {
 
 
 
-	public Sale(int itemId, String itemName, Date buyDate,
+	public Sale(String itemName, Date buyDate,
 			int purchaceQuantity, int itemPrice) {
 		super();
-		this.itemId = itemId;
 		this.itemName = itemName;
 		this.buyDate = buyDate;
 		this.purchaceQuantity = purchaceQuantity;
 		this.itemPrice = itemPrice;
-	}
-
-	public int getItemId() {
-		return itemId;
-	}
-
-	public void setItemId(int itemId) {
-		this.itemId = itemId;
 	}
 
 	public String getItemName() {

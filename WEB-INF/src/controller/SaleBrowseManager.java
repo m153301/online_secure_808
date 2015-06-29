@@ -7,34 +7,31 @@ package controller;
 
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
-
-import dao.ItemDAO;
-import dao.OrderedDAO;
-import dao.PurchaceDAO;
-import beans.Item;
-import beans.Ordered;
-import beans.Purchace;
+import dao.SaleDAO;
+import beans.Sale;
 
 public class SaleBrowseManager {
 
 	private Connection connection = null;
 
-	public ArrayList<Purchace> saleBrowse(){
-		PurchaceDAO purchaceDAO = new PurchaceDAO();
-		this.connection = purchaceDAO.createConnection();
+	public ArrayList<Sale> saleBrowse(){
 
-		ArrayList<Purchace> alllist = purchaceDAO.saleBrowseDAO(connection);
-		purchaceDAO.closeConnection(this.connection);
+		SaleDAO saleDAO = new SaleDAO();
+		this.connection = saleDAO.createConnection();
 
-		ArrayList<Purchace> quantitylist = new ArrayList<>();
+		//全ての購入リストをとってくる
+		ArrayList<Sale> alllist = SaleDAO.saleBrowseDAO(connection);
+		saleDAO.closeConnection(this.connection);
 
+		ArrayList<Sale> quantitylist = new ArrayList<>();
+
+
+		//日付と商品ごとの売上数を合算
 		for(int i=0; i!=alllist.size(); i++){
 			for(int j= 0; j!=quantitylist.size(); j++){
-				if(alllist.get(i).getBuyDate().equals(quantitylist.get(j).getBuyDate()) && alllist.get(i).getItemId() == quantitylist.get(j).getItemId()){
+				if(alllist.get(i).getBuyDate().equals(quantitylist.get(j).getBuyDate()) && alllist.get(i).getItemName() == quantitylist.get(j).getItemName()){
 					int quantity = alllist.get(i).getPurchaceQuantity() + quantitylist.get(j).getPurchaceQuantity();
 					quantitylist.get(j).setPurchaceQuantity(quantity);
 				}
@@ -45,9 +42,6 @@ public class SaleBrowseManager {
 		}
 
 		this.connection = null;
-
 		return quantitylist;
 	}
-
-
 }
