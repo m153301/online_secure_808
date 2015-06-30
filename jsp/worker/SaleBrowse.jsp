@@ -28,39 +28,48 @@ Iterator<Sale> iterator = saleList.iterator();
 
 while(iterator.hasNext()){
 
-	Sale sale = iterator.next();
-	out.println(saleList.get(sale.getBuyDate()));
-
-	out.println("<table style='text-align: center; width: 600px; height: 300px;' border='1' cellpadding='2' cellspacing='2'>");
-	out.println("<tr>");
-	out.println("<td> 商品名 </td>");
-	out.println("<td> 単価 </td>");
-	out.println("<td> 売上数 </td>");
-	out.println("<td> 計 </td>");
-	out.println("</tr>");
+	int i = 0;
+	if(i=0){
+		Sale sale = iterator.next();
+	}
+	int total = 0;
 
 	Date buyDate = sale.getBuyDate();
 	Date buyDate2 = sale.getBuyDate();
-	int total;
 
-	while(sale.getBuyDate().equals(buyDate){
-		out.println("<tr>");
-		out.println("<td>"+ sale.getItemName() +"</td>");
-		out.println("<td>"+ sale.getItemPrice() +"</td>");
-		out.println("<td>"+ sale.getPurchaceQuantity() +"</td>");
-		int subtotal = sale.getItemPrice() * sale.getPurchaceQuantity();
-		total = total + subtotal;
-		out.println("<td>"+ subtotal +"</td>");
-		out.println("</tr>");
+	while(buyDate.equals(buyDate2)){
 
-		buyDate =sale.getBuyDate()
-				//もし、次がなかったら
-		sale = iterator.next();
-		buyDate2 = sale.getBuyDate();
+		if(i=0){
+			out.println(saleList.get(sale.getBuyDate()));
+			out.println("<table style='text-align: center; width: 600px; height: 300px;' border='1' cellpadding='2' cellspacing='2'>");
+			out.println("<tr>");
+			out.println("<td> 商品名 </td>");
+			out.println("<td> 単価 </td>");
+			out.println("<td> 売上数 </td>");
+			out.println("<td> 計 </td>");
+			out.println("</tr>");
+
+			i++;
+		}
+
+		if(iterator.hasNext()){
+			sale = iterator.next();
+
+			out.println("<tr>");
+			out.println("<td>"+ sale.getItemName() +"</td>");
+			out.println("<td>"+ sale.getItemPrice() +"</td>");
+			out.println("<td>"+ sale.getPurchaceQuantity() +"</td>");
+			int subtotal = sale.getItemPrice() * sale.getPurchaceQuantity();
+			total = total + subtotal;
+			out.println("<td>"+ subtotal +"</td>");
+			out.println("</tr>");
+
+			buyDate2 = sale.getBuyDate();
+		}
+		else{
+			break;
+		}
 	}
-
-	//戻す
-	sale = iterator.previous();
 
 	out.println("<tr>");
 	out.println("<td> 計 </td>");
@@ -69,16 +78,6 @@ while(iterator.hasNext()){
 	out.println("<td>"+ total + "</td>");
 	out.println("</tr>");
 }
-
-
-}
-
-
-
-
-
-
-
 %>
 
 </div>
