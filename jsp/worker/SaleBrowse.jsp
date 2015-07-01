@@ -1,10 +1,12 @@
-<%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ page import="beans.Sale" %>
+<%@ page import="java.util.Date"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
 
-<%ArrayList<Sale> saleList = (ArrayList)request.getAttribute("SaleList") %>
+<%
+ArrayList<Sale> saleList = (ArrayList<Sale>)request.getAttribute("SaleList");
+%>
 
 <html>
 <head>
@@ -24,12 +26,12 @@
 <%
 Iterator<Sale> iterator = saleList.iterator();
 
-//out.println("")
+//System.out.println("aaaaaa")
 
 while(iterator.hasNext()){
 
 	int i = 0;
-	if(i=0){
+	if(i == 0){
 		Sale sale = iterator.next();
 	}
 	int total = 0;
@@ -39,7 +41,7 @@ while(iterator.hasNext()){
 
 	while(buyDate.equals(buyDate2)){
 
-		if(i=0){
+		if(i == 0){
 			out.println(saleList.get(sale.getBuyDate()));
 			out.println("<table style='text-align: center; width: 600px; height: 300px;' border='1' cellpadding='2' cellspacing='2'>");
 			out.println("<tr>");
