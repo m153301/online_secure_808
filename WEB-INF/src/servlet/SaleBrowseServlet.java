@@ -1,4 +1,3 @@
-
 package servlet;
 
 /*****************************************************************************/
@@ -33,8 +32,10 @@ public class SaleBrowseServlet extends HttpServlet{
 		SaleBrowseManager manager = new SaleBrowseManager();
 		ArrayList<Sale> saleList = manager.saleBrowse();
 
+		//System.out.println(saleList.size());
+
 		request.setAttribute("SaleList", saleList);
-		getServletContext().getRequestDispatcher("/jsp/SaleBrowse.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/jsp/worker/SaleBrowse.jsp").forward(request, response);
 	}
 
 }

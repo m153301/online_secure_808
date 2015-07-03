@@ -26,14 +26,16 @@ ArrayList<Sale> saleList = (ArrayList<Sale>)request.getAttribute("SaleList");
 <%
 Iterator<Sale> iterator = saleList.iterator();
 
-//System.out.println("aaaaaa")
+//System.out.println(saleList.size());
 
 while(iterator.hasNext()){
 
+//System.out.println("aaaaaa");
+
 	int i = 0;
-	if(i == 0){
-		Sale sale = iterator.next();
-	}
+
+	Sale sale = iterator.next();
+
 	int total = 0;
 
 	Date buyDate = sale.getBuyDate();
@@ -42,7 +44,7 @@ while(iterator.hasNext()){
 	while(buyDate.equals(buyDate2)){
 
 		if(i == 0){
-			out.println(saleList.get(sale.getBuyDate()));
+			out.println(sale.getBuyDate());
 			out.println("<table style='text-align: center; width: 600px; height: 300px;' border='1' cellpadding='2' cellspacing='2'>");
 			out.println("<tr>");
 			out.println("<td> 商品名 </td>");
@@ -50,13 +52,12 @@ while(iterator.hasNext()){
 			out.println("<td> 売上数 </td>");
 			out.println("<td> 計 </td>");
 			out.println("</tr>");
-
-			i++;
 		}
 
 		if(iterator.hasNext()){
-			sale = iterator.next();
-
+			if(i == 0){
+				sale = iterator.next();
+			}
 			out.println("<tr>");
 			out.println("<td>"+ sale.getItemName() +"</td>");
 			out.println("<td>"+ sale.getItemPrice() +"</td>");
@@ -67,8 +68,11 @@ while(iterator.hasNext()){
 			out.println("</tr>");
 
 			buyDate2 = sale.getBuyDate();
+			i++;
+
 		}
 		else{
+			i = 0;
 			break;
 		}
 	}

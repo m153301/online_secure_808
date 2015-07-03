@@ -15,7 +15,7 @@
 		<url-pattern>/jsp/worker/ItemInfoRegistServlet</url-pattern>
 	</servlet-mapping>
 
-	   <servlet>
+	<servlet>
 		<servlet-name>SaleBrowse</servlet-name>
 		<servlet-class>servlet.SaleBrowseServlet</servlet-class>
 	</servlet>
@@ -42,7 +42,7 @@
 		<servlet-name>LogOutServlet</servlet-name>
 		<url-pattern>/jsp/common/LogOutServlet</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>CustomerRegistServlet</servlet-name>
 		<servlet-class>servlet.CustomerRegistServlet</servlet-class>
@@ -51,7 +51,7 @@
 		<servlet-name>CustomerRegistServlet</servlet-name>
 		<url-pattern>/jsp/customer/CustomerRegistServlet</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>WorkerRegistServlet</servlet-name>
 		<servlet-class>servlet.WorkerRegistServlet</servlet-class>
@@ -60,6 +60,6 @@
 		<servlet-name>WorkerRegistServlet</servlet-name>
 		<url-pattern>/jsp/worker/WorkerRegistServlet</url-pattern>
 	</servlet-mapping>
-	
+
 </web-app>
 

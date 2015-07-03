@@ -20,7 +20,7 @@ public class SaleDAO extends DriverAccessor{
 	public static ArrayList<Sale> saleBrowseDAO(Connection connection){
 		try{
 
-			String sql="SELECT purchace.buyDate, purchace.purchaceQuantity, item.itemName, item.itemPrice FROM purchace INNER JOIN item ON purchace.itemId = item.itemId;";
+			String sql="SELECT purchace.buy_date, purchace.purchase_quantity, item.item_name, item.item_price FROM purchace INNER JOIN item ON purchace.item_id = item.item_id;";
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
 
@@ -32,10 +32,10 @@ public class SaleDAO extends DriverAccessor{
 		    {
 			Sale sale = new Sale(null, null, 0, 0);
 
-			sale.setItemName(rs.getString("item.itemName"));
-			sale.setBuyDate(rs.getDate("purchace.buyDate"));
-			sale.setPurchaceQuantity(rs.getInt("purchace.purchaceQuantity"));
-			sale.setItemPrice(rs.getInt("item.itemPrice"));
+			sale.setItemName(rs.getString("item.item_name"));
+			sale.setBuyDate(rs.getDate("purchace.buy_date"));
+			sale.setPurchaceQuantity(rs.getInt("purchace.purchase_quantity"));
+			sale.setItemPrice(rs.getInt("item.item_price"));
 
 			list.add(sale);
 			}
