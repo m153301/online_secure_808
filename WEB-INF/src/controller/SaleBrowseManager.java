@@ -27,24 +27,27 @@ public class SaleBrowseManager {
 
 		ArrayList<Sale> quantitylist = new ArrayList<>();
 
-
-		//多分quantitylistに何も入ってないから
-
 		quantitylist.add(0, alllist.get(0));
 
+		//System.out.println("size=" + alllist.size());
+
 		//日付と商品ごとの売上数を合算
-		for(int i=1; i!=alllist.size(); i++){
-			System.out.println(alllist.get(i).getBuyDate());
-			for(int j= 0; j!=quantitylist.size(); j++){
-				System.out.println(quantitylist.get(j).getBuyDate());
+		for(int i=1; i<alllist.size(); i++){
+			int c = 0;
+
+			for(int j= 0; j<quantitylist.size(); j++){
+
 				if(alllist.get(i).getBuyDate().equals(quantitylist.get(j).getBuyDate()) && alllist.get(i).getItemName() == quantitylist.get(j).getItemName()){
 					int quantity = alllist.get(i).getPurchaceQuantity() + quantitylist.get(j).getPurchaceQuantity();
 					quantitylist.get(j).setPurchaceQuantity(quantity);
+					c = 1;
 				}
-				else{
-					quantitylist.add(alllist.get(i));
-				}
+
 			}
+			if(c==0){
+				quantitylist.add(alllist.get(i));
+			}
+
 		}
 
 		this.connection = null;

@@ -32,7 +32,12 @@ public class SaleBrowseServlet extends HttpServlet{
 		SaleBrowseManager manager = new SaleBrowseManager();
 		ArrayList<Sale> saleList = manager.saleBrowse();
 
-		//System.out.println(saleList.size());
+		int i;
+
+		for(i=0; i<saleList.size(); i++){
+			System.out.println(saleList.get(i).getItemName());
+			System.out.println(saleList.get(i).getPurchaceQuantity());
+		}
 
 		request.setAttribute("SaleList", saleList);
 		getServletContext().getRequestDispatcher("/jsp/worker/SaleBrowse.jsp").forward(request, response);
