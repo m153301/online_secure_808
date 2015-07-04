@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import utility.DriverAccessor;
@@ -23,8 +24,8 @@ public class SaleDAO extends DriverAccessor{
 			String sql="SELECT purchace.buy_date, purchace.purchase_quantity, item.item_name, item.item_price FROM purchace INNER JOIN item ON purchace.item_id = item.item_id;";
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
-
-			ResultSet rs = stmt.executeQuery(sql);
+			//Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery();
 
 			ArrayList<Sale> list = new ArrayList<Sale>();
 

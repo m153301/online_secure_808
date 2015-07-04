@@ -29,11 +29,11 @@ public class SaleBrowseManager {
 
 
 		//多分quantitylistに何も入ってないから
-		Sale sale = new Sale(null, null, 0, 0);
-		quantitylist.add(0, sale);
+
+		quantitylist.add(0, alllist.get(0));
 
 		//日付と商品ごとの売上数を合算
-		for(int i=0; i!=alllist.size(); i++){
+		for(int i=1; i!=alllist.size(); i++){
 			System.out.println(alllist.get(i).getBuyDate());
 			for(int j= 0; j!=quantitylist.size(); j++){
 				System.out.println(quantitylist.get(j).getBuyDate());
