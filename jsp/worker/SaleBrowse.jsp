@@ -24,13 +24,10 @@ ArrayList<Sale> saleList = (ArrayList<Sale>)request.getAttribute("SaleList");
 	<br>
 
 <%
+
 Iterator<Sale> iterator = saleList.iterator();
 
-//System.out.println(saleList.size());
-
 while(iterator.hasNext()){
-
-//System.out.println("aaaaaa");
 
 	int i = 0;
 
