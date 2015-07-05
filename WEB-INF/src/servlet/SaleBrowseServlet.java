@@ -35,8 +35,7 @@ public class SaleBrowseServlet extends HttpServlet{
 		int i;
 
 		for(i=0; i<saleList.size(); i++){
-			System.out.println(saleList.get(i).getItemName());
-			System.out.println(saleList.get(i).getPurchaceQuantity());
+			System.out.println(saleList.get(i).getItemName() + saleList.get(i).getPurchaceQuantity() + saleList.get(i).getBuyDate());
 		}
 
 		request.setAttribute("SaleList", saleList);
