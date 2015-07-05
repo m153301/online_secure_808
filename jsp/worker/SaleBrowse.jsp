@@ -39,7 +39,9 @@ while(iterator.hasNext()){
 
 	out.println("<table style='text-align: center; width: 600px; height: 300px;' border='1' cellpadding='2' cellspacing='2'>");
 	out.print("<br><br>");
+	out.println("<big>");
 	out.println(sale.getBuyDate());
+	out.println("</big>");
 	out.println("<tr>");
 	out.println("<td> 商品名 </td>");
 	out.println("<td> 単価 </td>");
