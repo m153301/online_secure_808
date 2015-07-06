@@ -14,7 +14,14 @@
 		<a href="RecommendRegist.jsp">おすすめ登録</a><br>
 		<br>
 		☆売上☆<br>
-		<a href="SaleBrowse.jsp">売上閲覧</a><br>
+		<!--  <form method="post" action="./SaleBrowseServlet">
+		<input type="submit" name="enter" value="確認">
+		</form>
+		<a href=".SaleBrowseServlet">確認</a>-->
+		<form method = "post" action="./SaleBrowseServlet">
+		<input type="submit" value="売上確認">
+		</form>
+
 		<br>
 		☆その他☆<br>
 		<a href="../worker/WorkerInfoRegist.jsp">店員登録</a><br>

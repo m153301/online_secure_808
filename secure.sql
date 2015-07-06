@@ -86,7 +86,7 @@ CREATE TABLE `ip_lock` (
 
 LOCK TABLES `ip_lock` WRITE;
 /*!40000 ALTER TABLE `ip_lock` DISABLE KEYS */;
-INSERT INTO `ip_lock` VALUES ('157.105.55.27',0),('169.254.21.182',0);
+INSERT INTO `ip_lock` VALUES ('157.105.55.27',0),('169.254.21.182',0),('192.168.1.6',0);
 /*!40000 ALTER TABLE `ip_lock` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,34 +149,34 @@ LOCK TABLES `ordered` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `purchace`
+-- Table structure for table `purchase`
 --
 
-DROP TABLE IF EXISTS `purchace`;
+DROP TABLE IF EXISTS `purchase`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `purchace` (
-  `purchace_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE_TABLEATE TABLE `purchase` (
+  `purchase_id` int(11) NOT NULL AUTO_INCREMENT,
   `item_id` int(12) NOT NULL,
   `buy_date` date DEFAULT NULL,
   `purchase_quantity` int(3) DEFAULT NULL,
   `user_id` varchar(12) NOT NULL,
-  PRIMARY KEY (`purchace_id`),
-  UNIQUE KEY `purchace_id` (`purchace_id`),
-  KEY `item_id` (`item_id`),
+  PRIMARY KEY (`purchase_id`),
+  UNIQUE KEY `purchase_id` (`purchase_id`),
+  KEY `insertem_id` (`item_id`),
   KEY `user_id` (`user_id`),
-  CONSTRAINT `purchace_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `purchace_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `customer` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `purchase_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `purchase_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `customer` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `purchace`
+-- Dumping data for table `purchase`
 --
 
-LOCK TABLES `purchace` WRITE;
-/*!40000 ALTER TABLE `purchace` DISABLE KEYS */;
-/*!40000 ALTER TABLE `purchace` ENABLE KEYS */;
+LOCK TABLES `purchase` WRITE;
+/*!40000 ALTER TABLE `purchase` DISABLE KEYS */;
+/*!40000 ALTER TABLE `purchase` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -230,7 +230,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('k','b5afb1cd9572c3e80a577a63b2a7f01e1d2bdbd09756ad4c82e89ff39d9ee87d','てすと','worker'),('shu-','d3e082974db389e0b58045f2e10903af145dd2dc32e76da42bd6a1b9794a6e35','&atilde;??&atilde;??&atilde;??&atilde;??','customer'),('yatame','yatame','ya','customer'),('zawa','ae0590fa490a46c225630b1e7144d45a0c2bd1cb50ad4ff007775dfbc571e241','zawa','worker');
+INSERT INTO `user` VALUES ('worker','957bfc4a017b69d7e3ace6f6947f63d5779fc0b7c620b8b908046f72cc88b2d3','worker','worker');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,4 +267,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-19 12:59:58
+-- Dump completed on 2015-07-04 16:22:34
