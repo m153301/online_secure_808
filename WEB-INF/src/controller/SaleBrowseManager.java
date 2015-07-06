@@ -38,8 +38,8 @@ public class SaleBrowseManager {
 			for(int j= 0; j<quantitylist.size(); j++){
 
 				if(alllist.get(i).getBuyDate().equals(quantitylist.get(j).getBuyDate()) && alllist.get(i).getItemName().equals(quantitylist.get(j).getItemName())){
-					int quantity = alllist.get(i).getPurchaceQuantity() + quantitylist.get(j).getPurchaceQuantity();
-					quantitylist.get(j).setPurchaceQuantity(quantity);
+					int quantity = alllist.get(i).getPurchaseQuantity() + quantitylist.get(j).getPurchaseQuantity();
+					quantitylist.get(j).setPurchaseQuantity(quantity);
 					c = 1;
 				}
 

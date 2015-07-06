@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import utility.DriverAccessor;
-import beans.Purchace;
+import beans.Purchase;
 
 public class PurchaceDAO extends DriverAccessor{
 

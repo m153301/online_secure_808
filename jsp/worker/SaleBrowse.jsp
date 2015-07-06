@@ -56,8 +56,8 @@ while(iterator.hasNext()){
 		out.println("<tr>");
 		out.println("<td>"+ sale.getItemName() +"</td>");
 		out.println("<td>"+ sale.getItemPrice() +"</td>");
-		out.println("<td>"+ sale.getPurchaceQuantity() +"</td>");
-		subtotal = sale.getItemPrice() * sale.getPurchaceQuantity();
+		out.println("<td>"+ sale.getPurchaseQuantity() +"</td>");
+		subtotal = sale.getItemPrice() * sale.getPurchaseQuantity();
 		total = total + subtotal;
 		out.println("<td>"+ subtotal +"</td>");
 		out.println("</tr>");

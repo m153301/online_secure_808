@@ -5,17 +5,17 @@ import java.util.Date;
 public class Sale {
 	private String itemName;
 	private Date buyDate;
-	private int purchaceQuantity;
+	private int purchaseQuantity;
 	private int itemPrice;
 
 
 
 	public Sale(String itemName, Date buyDate,
-			int purchaceQuantity, int itemPrice) {
+			int purchaseQuantity, int itemPrice) {
 		super();
 		this.itemName = itemName;
 		this.buyDate = buyDate;
-		this.purchaceQuantity = purchaceQuantity;
+		this.purchaseQuantity = purchaseQuantity;
 		this.itemPrice = itemPrice;
 	}
 
@@ -35,12 +35,12 @@ public class Sale {
 		this.buyDate = buyDate;
 	}
 
-	public int getPurchaceQuantity() {
-		return purchaceQuantity;
+	public int getPurchaseQuantity() {
+		return purchaseQuantity;
 	}
 
-	public void setPurchaceQuantity(int purchaceQuantity) {
-		this.purchaceQuantity = purchaceQuantity;
+	public void setPurchaseQuantity(int purchaseQuantity) {
+		this.purchaseQuantity = purchaseQuantity;
 	}
 
 	public int getItemPrice() {
