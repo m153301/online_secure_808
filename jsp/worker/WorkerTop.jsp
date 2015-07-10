@@ -14,12 +14,15 @@
 		<a href="RecommendRegist.jsp">おすすめ登録</a><br>
 		<br>
 		☆売上☆<br>
-		<!--  <form method="post" action="./SaleBrowseServlet">
-		<input type="submit" name="enter" value="確認">
-		</form>
-		<a href=".SaleBrowseServlet">確認</a>-->
+
 		<form method = "post" action="./SaleBrowseServlet">
 		<input type="submit" value="売上確認">
+		</form>
+		<br>
+		☆発注履歴☆<br>
+
+		<form method = "post" action="./OrderedBrowseServlet">
+		<input type="submit" value="発注履歴確認">
 		</form>
 
 		<br>
