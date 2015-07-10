@@ -155,7 +155,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `purchase`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE_TABLEATE TABLE `purchase` (
+CREATE TABLE `purchase` (
   `purchase_id` int(11) NOT NULL AUTO_INCREMENT,
   `item_id` int(12) NOT NULL,
   `buy_date` date DEFAULT NULL,

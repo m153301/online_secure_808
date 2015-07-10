@@ -5,9 +5,12 @@ package dao;
 //  自分が格納されているフォルダの外にある必要なクラス
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import beans.Ordered;
+import beans.Orderedlist;
 import utility.DriverAccessor;
 
 public class OrderedDAO extends DriverAccessor{
@@ -56,4 +59,45 @@ public class OrderedDAO extends DriverAccessor{
 			finally{}
 	}
 
+
+	//発注履歴を検索する
+	public static ArrayList<Orderedlist> orderedBrowseDAO(Connection connection){
+		try{
+
+			String sql="SELECT ordered.order_id, user.user_name, item.item_name, ordered.order_date, ordered.order_quantity FROM user INNER JOIN (item INNER JOIN ordered ON item.item_id = ordered.item_id) ON ordered.user_id = user.user_id;";
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+
+			ArrayList<Orderedlist> list = new ArrayList<Orderedlist>();
+
+			while(rs.next())
+		    {
+			Orderedlist orderedlist = new Orderedlist(0, null, null, 0, null);
+
+			orderedlist.setOrderId(rs.getInt("ordered.order_id"));
+			orderedlist.setUserName(rs.getString("user.user_name"));
+			orderedlist.setItemName(rs.getString("item.item_name"));
+			orderedlist.setOrderDate(rs.getDate("ordered.order_date"));
+			orderedlist.setOrderQuantity(rs.getInt("ordered.order_quantity"));
+
+			list.add(orderedlist);
+			}
+
+
+
+			stmt.close();
+			rs.close();
+
+			return list;
+
+		}catch(SQLException e){
+
+			e.printStackTrace();
+			return null;
+
+		} finally {
+
+		}
+	}
 }
