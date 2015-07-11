@@ -1,6 +1,7 @@
 bin/
 WEB-INF/src/utility/DriverAccessor.java
 WEB-INF/src/utility/PasswordEncryption.java
+WEB-INF/src/utility/SecureConnection.java
 WEB-INF/classes/
 work/
 .classpath
