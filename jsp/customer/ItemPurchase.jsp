@@ -9,6 +9,7 @@
 		<a href="CustomerTop.html">トップに戻る</a><br><br>
 		<a href="ItemList.html">商品一覧に戻る</a><br>
 	</div>
+	<div></div>
 	<br>
 	<br>
 	<table style="text-align: left; width: 360px; margin-left: auto; margin-right: auto; height: 300px;" border="1" cellpadding="2" cellspacing="2">
