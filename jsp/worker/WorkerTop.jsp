@@ -15,13 +15,13 @@
 		<br>
 		☆売上☆<br>
 
-		<form method = "post" action="./SaleBrowseServlet">
+		<form method = "post" action="../worker/SaleBrowseServlet">
 		<input type="submit" value="売上確認">
 		</form>
 		<br>
 		☆発注履歴☆<br>
 
-		<form method = "post" action="./OrderedBrowseServlet">
+		<form method = "post" action="../worker/OrderedBrowseServlet">
 		<input type="submit" value="発注履歴確認">
 		</form>
 
