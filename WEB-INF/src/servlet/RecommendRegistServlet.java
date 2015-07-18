@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.Recommend;
+import beans.User;
 import controller.RecommendRegistManager;
 
 
@@ -38,14 +39,14 @@ public class RecommendRegistServlet extends HttpServlet{
 
 		//jspから値を取得 dateはここを実行した時点での時刻を取る
 		int item_id = Integer.parseInt( request.getParameter("item_id") );
-		String user_id = session.getId();
+		User user = (User)session.getAttribute("worker");
 		Date date = new Date();
 		
 		System.out.println(item_id);
-		System.out.println(user_id);
+		System.out.println(user.getUserId());
 		System.out.println(date);
 
-		Recommend recommend = new Recommend( item_id, user_id, date );
+		Recommend recommend = new Recommend( item_id, user.getUserId(), date );
 
 		RecommendRegistManager manager = new RecommendRegistManager();
 		manager.setRecommend(recommend);
