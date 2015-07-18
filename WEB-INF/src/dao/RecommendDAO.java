@@ -32,6 +32,7 @@ public class RecommendDAO extends DriverAccessor{
 			cal.set(Calendar.MILLISECOND, 0);
 			java.sql.Date d2 = new java.sql.Date(cal.getTimeInMillis());
 			
+			//sql文の実行
 			String sql = "insert into recommend values(?,?,?)";
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
