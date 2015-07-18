@@ -11,8 +11,9 @@
 		☆商品☆<br>
 		<a href="../worker/ItemInfoRegist.jsp">商品登録</a><br>
 		<a href="ItemInfoChangeList.jsp">商品編集</a><br>
-		<a href="RecommendRegist.jsp">おすすめ登録</a><br>
-		<br>
+		<form action="../worker/ItemInfoGetServlet" method="post">
+			<button type="submit" style="border:none;background-color:transparent;" >おすすめ登録</button>
+		</form><br>
 		☆売上☆<br>
 
 		<form method = "post" action="../worker/SaleBrowseServlet">
