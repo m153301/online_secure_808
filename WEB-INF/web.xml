@@ -51,5 +51,23 @@
 		<url-pattern>/jsp/worker/WorkerRegistServlet</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>ItemInfoGetServlet</servlet-name>
+		<servlet-class>servlet.ItemInfoGetServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ItemInfoGetServlet</servlet-name>
+		<url-pattern>/jsp/worker/ItemInfoGetServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ReccomendRegistServlet</servlet-name>
+		<servlet-class>servlet.ReccomendRegistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReccomendRegistServlet</servlet-name>
+		<url-pattern>/jsp/worker/ReccomendRegistServlet</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
 
