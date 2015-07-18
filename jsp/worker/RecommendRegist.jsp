@@ -39,7 +39,7 @@ ArrayList<Item> itemList = (ArrayList)request.getAttribute("ItemList");
 					Item item = iterator.next();
 					out.println("<tr>");
 						out.println("<td style='text-align: center; width: 40px; height: 60px;'>");
-							out.println("<input type='radio' value=" + item.getItemId() + ">");
+							out.println("<input type='radio' name='item_id' value=" + item.getItemId() + ">");
 						out.println("</td>");
 						out.println("<td style='text-align: center; width: 75px; height: 60px;'>" + item.getItemName() + "</td>");
 						out.println("<td style='text-align: center; width: 150px; height: 60px;'>" + item.getItemPrice() + "円</td>");

@@ -61,12 +61,12 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>ReccomendRegistServlet</servlet-name>
-		<servlet-class>servlet.ReccomendRegistServlet</servlet-class>
+		<servlet-name>RecommendRegistServlet</servlet-name>
+		<servlet-class>servlet.RecommendRegistServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ReccomendRegistServlet</servlet-name>
-		<url-pattern>/jsp/worker/ReccomendRegistServlet</url-pattern>
+		<servlet-name>RecommendRegistServlet</servlet-name>
+		<url-pattern>/jsp/worker/RecommendRegistServlet</url-pattern>
 	</servlet-mapping>
 	
 </web-app>
