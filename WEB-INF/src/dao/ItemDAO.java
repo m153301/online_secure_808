@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import utility.DriverAccessor;
 import beans.Item;
@@ -64,6 +66,33 @@ public class ItemDAO extends DriverAccessor{
 
 		}
 		return item_id;
+	}
+	
+	// 全ての商品情報を取り出し
+	public List<Item> selectItemAll(Connection con){
+		try{
+
+			String sql = "select * from item";
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			List<Item> items = new ArrayList<Item>();
+			while( rs.next() ){
+				Item item = new Item();
+				item.setItemId(rs.getInt("item_id"));
+				item.setItemName(rs.getString("item_name"));
+				item.setItemPrice(rs.getInt("item_price"));
+				item.setItemStock(rs.getInt("item_stock"));
+				items.add(item);
+			}
+			stmt.close();
+			rs.close();
+			return items;
+
+		}catch(SQLException e){
+			e.printStackTrace();
+		} finally {
+		}
+		return null;
 	}
 
 
