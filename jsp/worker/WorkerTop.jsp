@@ -15,7 +15,17 @@
 			<button type="submit" style="border:none;background-color:transparent;" >おすすめ登録</button>
 		</form><br>
 		☆売上☆<br>
-		<a href="SaleBrowse.jsp">売上閲覧</a><br>
+
+		<form method = "post" action="../worker/SaleBrowseServlet">
+		<input type="submit" value="売上確認">
+		</form>
+		<br>
+		☆発注履歴☆<br>
+
+		<form method = "post" action="../worker/OrderedBrowseServlet">
+		<input type="submit" value="発注履歴確認">
+		</form>
+
 		<br>
 		☆その他☆<br>
 		<a href="../worker/WorkerInfoRegist.jsp">店員登録</a><br>

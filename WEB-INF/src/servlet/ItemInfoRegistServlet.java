@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import beans.Item;
 import beans.Ordered;
 import controller.ItemInfoRegistManager;
@@ -35,17 +37,20 @@ public class ItemInfoRegistServlet extends HttpServlet{
 
 		//まず商品をItemテーブルに格納。最初は発注した数が在庫になる。
 		//item_idを返すようにする
-		String item_name = request.getParameter("item_name");
-		int item_price = Integer.parseInt(request.getParameter("item_price"));
-		int item_stock = Integer.parseInt(request.getParameter("item_stock"));
+		String item_name = StringEscapeUtils.escapeHtml4(request.getParameter("item_name"));
+		String item_priceString = StringEscapeUtils.escapeHtml4(request.getParameter("item_price"));
+		String item_stockString = StringEscapeUtils.escapeHtml4(request.getParameter("item_stock"));
 
+		int item_price = Integer.parseInt(item_priceString);
+		int item_stock = Integer.parseInt(item_stockString);
+
+		//コンストラクタ
 		Item item = new Item( 0, item_name, item_price, item_stock);
 
 		ItemInfoRegistManager manager = new ItemInfoRegistManager();
 		int item_id = manager.registItemInfo(item);
 
 		//次に、いつ誰が何をいくつ登録・発注したかを記録する。
-
 
 		Date date = new Date();
 

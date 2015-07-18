@@ -2,14 +2,14 @@ package beans;
 
 import java.util.Date;
 
-public class Purchace {
+public class Purchase {
 	private int purchaceId;
 	private int itemId;
 	private Date buyDate;
 	private int purchaceQuantity;
 	private String userId;
 	
-	public Purchace(int purchaceId, int itemId, Date buyDate,
+	public Purchase(int purchaceId, int itemId, Date buyDate,
 			int purchaceQuantity, String userId) {
 		super();
 		this.purchaceId = purchaceId;
