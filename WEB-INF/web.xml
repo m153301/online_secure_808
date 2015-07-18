@@ -60,7 +60,6 @@
 		<servlet-name>WorkerRegistServlet</servlet-name>
 		<url-pattern>/jsp/worker/WorkerRegistServlet</url-pattern>
 	</servlet-mapping>
-<<<<<<< HEAD
 	
 	<servlet>
 		<servlet-name>ItemInfoGetServlet</servlet-name>
@@ -79,8 +78,6 @@
 		<servlet-name>RecommendRegistServlet</servlet-name>
 		<url-pattern>/jsp/worker/RecommendRegistServlet</url-pattern>
 	</servlet-mapping>
-	
-=======
 
 	<servlet>
 		<servlet-name>OrderedBrowseServlet</servlet-name>
@@ -90,8 +87,6 @@
 		<servlet-name>OrderedBrowseServlet</servlet-name>
 		<url-pattern>/jsp/worker/OrderedBrowseServlet</url-pattern>
 	</servlet-mapping>
-
-
->>>>>>> develop
+	
 </web-app>
 
