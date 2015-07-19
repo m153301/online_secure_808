@@ -87,6 +87,13 @@
 	<servlet-mapping>
 		<servlet-name>PurchaseRegistServlet</servlet-name>
 		<url-pattern>/jsp/customer/PurchaseRegistServlet</url-pattern></servlet-mapping>
+	<servlet>
+		<servlet-name>PurchaseCheckServlet</servlet-name>
+		<servlet-class>servlet.PurchaseCheckServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PurchaseCheckServlet</servlet-name>
+		<url-pattern>/jsp/customer/PurchaseCheckServlet</url-pattern></servlet-mapping>
 
 
 </web-app>

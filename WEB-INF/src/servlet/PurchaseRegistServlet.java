@@ -30,13 +30,13 @@ public class PurchaseRegistServlet extends HttpServlet{
 			request.setCharacterEncoding("UTF-8");
 			int itemId = Integer.parseInt(request.getParameter("ItemID"));
 			String itemName = request.getParameter("ItemNAME");
-			int itemPrice = Integer.parseInt(request.getParameter("ItemID"));
+			int itemPrice = Integer.parseInt(request.getParameter("ItemPRICE"));
 			int purQuan = Integer.parseInt(request.getParameter("number"));
 			int price = itemPrice * purQuan;
 
 			if(purQuan == 0)
 			{
-				
+				getServletContext().getRequestDispatcher("/jsp/customer/CustomerTop.jsp").forward(request, response);
 			}
 			else
 			{
@@ -47,12 +47,15 @@ public class PurchaseRegistServlet extends HttpServlet{
 				System.out.println("Uid " + user.getUserId() + " Pid " + itemId + " Quan " + purQuan);
 			
 				//購入登録
-				ItemPurchaseManager ipManage = new ItemPurchaseManager();
-				ipManage.RegistPurchase(itemId, purQuan, user);
+				//ItemPurchaseManager ipManage = new ItemPurchaseManager();
+				//ipManage.RegistPurchase(itemId, purQuan, user);
 			
-				//request.setAttribute("ItemID", itemId);
-
-				//getServletContext().getRequestDispatcher("/jsp/customer/ItemPurchase.jsp").forward(request, response); 
+				request.setAttribute("ItemID", itemId);
+				request.setAttribute("ItemNAME", itemName);
+				request.setAttribute("ItemPRICE", itemPrice);
+				request.setAttribute("ItemSTOCK", purQuan);
+				request.setAttribute("PRICE", price);
+				getServletContext().getRequestDispatcher("/jsp/customer/ItemPurchaseCheck.jsp").forward(request, response); 
 			}
 		}
 }

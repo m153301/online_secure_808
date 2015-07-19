@@ -15,7 +15,6 @@ ArrayList<Item> itemList = (ArrayList)request.getAttribute("ItemList");
 <body>
 	<div style="text-align: right;">
 		<a href="CustomerTop.html">トップに戻る</a><br><br>
-		<a href="ItemList.html">商品一覧に戻る</a><br>
 	</div>
 	<div></div>
 	<br>
@@ -52,7 +51,7 @@ ArrayList<Item> itemList = (ArrayList)request.getAttribute("ItemList");
 			</tr>
 			<tr>
 				<td colspan="2" rowspan="1" style="text-align: center; width: 180px; height: 60px;">
-					<button onclick="location.href='ItemPurchaseCheck.jsp'" name="enter">確認</button>
+					<input type="submit" value="確認">
 				</td>
 			</tr>
 			<input type="hidden" name="ItemID" value=<%= request.getAttribute("ItemID") %>>
