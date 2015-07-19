@@ -8,6 +8,8 @@
 <body>
 	<br>
 	<br>
+
+	<form action="./CustomerInfoChangeValidationServlet", methd="post">
 	<table style="width: 360px; margin-left: auto; margin-right: auto; height: 360px;" border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr align="center">
@@ -39,11 +41,12 @@
 			</tr>
 			<tr>
 				<td colspan="2" rowspan="1" style="text-align: center; width: 180px; height: 60px;">
-					<button onclick="location.href='CustomerInfoChangeCheck.jsp'" name="enter">確認</button>
+					<input type="submit" value="確認"></input>
 				</td>
 			</tr>
 		</tbody>
 	</table>
+	</form>
 	<br>
 	<br>
 	<br>
