@@ -13,7 +13,9 @@
 		<input type="submit" value="商品一覧">
 		</form>
 		
-		<a href="PurchaseHistory.jsp">購入履歴</a><br>
+		<form method = "post" action="../customer/ItemListServlet">
+		<input type="submit" value="購入履歴">
+		</form>
 		<br>
 		☆その他☆<br>
 		<a href="CustomerInfoChange.jsp">お客様情報の変更</a><br>
