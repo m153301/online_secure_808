@@ -9,7 +9,10 @@
 		キャベツ<br>
 		<br>
 		☆買い物☆<br>
-		<a href="ItemList.jsp">商品一覧</a><br>
+		<form method = "post" action="../customer/ItemListServlet">
+		<input type="submit" value="商品一覧">
+		</form>
+		
 		<a href="PurchaseHistory.jsp">購入履歴</a><br>
 		<br>
 		☆その他☆<br>
