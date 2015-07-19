@@ -2,11 +2,13 @@
 <classpath>
 	<classpathentry kind="src" path="WEB-INF/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/nobusukekobayashi/Documents/apache-tomcat-7.0.62/lib/annotations-api.jar"/>
-	<classpathentry kind="lib" path="/Users/nobusukekobayashi/Documents/apache-tomcat-7.0.62/lib/el-api.jar"/>
-	<classpathentry kind="lib" path="/Users/nobusukekobayashi/Documents/apache-tomcat-7.0.62/lib/jasper.jar"/>
-	<classpathentry kind="lib" path="/Users/nobusukekobayashi/Documents/apache-tomcat-7.0.62/lib/jsp-api.jar"/>
-	<classpathentry kind="lib" path="/Users/nobusukekobayashi/Documents/apache-tomcat-7.0.62/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="/Users/nobusukekobayashi/Documents/commons-lang3-3.4/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4-sources.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4-test-sources.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4-tests.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-lang3-3.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/mysql-connector-java-3.0.17-ga-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
