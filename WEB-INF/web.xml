@@ -94,6 +94,12 @@
 	<servlet-mapping>
 		<servlet-name>PurchaseCheckServlet</servlet-name>
 		<url-pattern>/jsp/customer/PurchaseCheckServlet</url-pattern></servlet-mapping>
+	<servlet>
+		<servlet-name>PurchaseHistoryServlet</servlet-name>
+		<servlet-class>servlet.PurchaseHistoryServlet</servlet-class></servlet>
+	<servlet-mapping>
+		<servlet-name>PurchaseHistoryServlet</servlet-name>
+		<url-pattern>/jsp/customer/PurchaseHistoryServlet</url-pattern></servlet-mapping>
 
 
 </web-app>

@@ -13,7 +13,7 @@
 		<input type="submit" value="商品一覧">
 		</form>
 		
-		<form method = "post" action="../customer/ItemListServlet">
+		<form method = "post" action="../customer/PurchaseHistoryServlet">
 		<input type="submit" value="購入履歴">
 		</form>
 		<br>
