@@ -9,7 +9,7 @@
 	<br>
 	<br>
 	
-		<form action="./RecommendRegistServlet" method="post">
+		<form action="./ItemInfoChange.jsp" method="get">
 		<table style="text-align: left; width: 490px; margin-left: auto; margin-right: auto; height: 540px;" border="1" cellpadding="2" cellspacing="2">
 			<tbody>
 				<tr>
@@ -22,9 +22,9 @@
 					<td style="vertical-align: middle; width: 150px; text-align: center;">在庫</td>
 				</tr>
 				<%
-				//iteratorの生成
 				List<Item> items = (List<Item>)request.getAttribute("items");
-				//順番に中身がなくなるまで取り出す
+				HttpSession hs = request.getSession();
+				hs.setAttribute("items", items);
 				for( Item item : items )
 				{
 					out.println("<tr>");
@@ -39,7 +39,7 @@
 				%>
 				<tr>
 					<td colspan="4" rowspan="1" style="text-align: center;">
-						<button type="submit">変更</button>
+						<input type="submit" value="変更"/>
 					</td>
 				</tr>
 			</tbody>
