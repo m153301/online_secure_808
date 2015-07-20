@@ -90,11 +90,11 @@
 
 	<servlet>
 		<servlet-name>CustomerInfoChangeServlet</servlet-name>
-		<servlet-class>servlet.CustomerInfoChangeValidationServlet</servlet-class>
+		<servlet-class>servlet.CustomerInfoChangeServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CustomerInfoChangeServlet</servlet-name>
-		<url-pattern>/jsp/customer/CustomerInfoChangeValidationServlet</url-pattern>
+		<url-pattern>/jsp/customer/CustomerInfoChangeServlet</url-pattern>
 	</servlet-mapping>
 
 </web-app>
