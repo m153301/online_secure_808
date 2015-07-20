@@ -47,10 +47,6 @@
 				</td>
 			</tr>
 			<tr>
-				<td style="text-align: center; width: 180px; height: 60px;">お客様ID</td>
-				<td style="text-align: center; width: 180px; height: 60px;"><input name="customer_id" type="text"></td>
-			</tr>
-			<tr>
 				<td style="text-align: center; width: 180px; height: 60px;">パスワード</td>
 				<td style="text-align: center; width: 180px; height: 60px;"><input name="customer_password" type="text"></td>
 			</tr>
