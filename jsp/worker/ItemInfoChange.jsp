@@ -22,6 +22,7 @@
 		}
 	%>
 
+	<form action="./ItemInfoChangeServlet">
 	<table style="text-align: left; width: 360px; margin-left: auto; margin-right: auto; height: 360px;" border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr align="center">
@@ -42,10 +43,11 @@
 			</tr>
 			<tr>
 				<td colspan="2" rowspan="1" style="text-align: center; width: 180px; height: 60px;">
-					<button onclick="location.href='ItemInfoChangeCheck.jsp'" name="enter">変更</button>
+					<input type="submit" value="変更" />
 				</td>
 			</tr>
 		</tbody>
 	</table>
+	</form>
 </body>
 </html>

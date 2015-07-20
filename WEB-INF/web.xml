@@ -97,6 +97,15 @@
 		<url-pattern>/jsp/worker/ItemInfoChangeListServlet</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>ItemInfoChangeServlet</servlet-name>
+		<servlet-class>servlet.ItemInfoChangeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ItemInfoChangeServlet</servlet-name>
+		<url-pattern>/jsp/worker/ItemInfoChangeServlet</url-pattern>
+	</servlet-mapping>
+
 
 </web-app>
 
