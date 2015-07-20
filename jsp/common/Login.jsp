@@ -35,7 +35,7 @@
 	</table>
 	<br>
 	<div class="center">
-		<a href="../customer/CustomerInfoRegist.jsp">新規の方はこちらから</a><br>
+		<a href="./CustomerInfoRegist.jsp">新規の方はこちらから</a><br>
 	</div>
 	<br>
 </body>
