@@ -16,7 +16,7 @@
 			out.println("</font>");
 		}
 	%>
-	<form action="./CustomerInfoChangeValidationServlet", methd="post">
+	<form action="./CustomerInfoChangeServlet", methd="post">
 	<table style="width: 360px; margin-left: auto; margin-right: auto; height: 360px;" border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr align="center">
