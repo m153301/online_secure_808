@@ -9,7 +9,7 @@
 	<br>
 	<br>
 	
-		<form action="./ItemInfoChange.jsp" method="get">
+		<form action="./ItemInfoChange.jsp" method="post">
 		<table style="text-align: left; width: 490px; margin-left: auto; margin-right: auto; height: 540px;" border="1" cellpadding="2" cellspacing="2">
 			<tbody>
 				<tr>

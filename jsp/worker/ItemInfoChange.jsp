@@ -11,6 +11,7 @@
 	<br>
 	<br>
 	<%
+		request.setCharacterEncoding("UTF-8");
 		HttpSession hs = request.getSession();
 		List<Item> items = (List<Item>)hs.getAttribute("items");
 	    Item changedItem = null;
@@ -22,7 +23,7 @@
 		}
 	%>
 
-	<form action="./ItemInfoChangeServlet">
+	<form action="./ItemInfoChangeServlet" method="post">
 	<table style="text-align: left; width: 360px; margin-left: auto; margin-right: auto; height: 360px;" border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr align="center">
