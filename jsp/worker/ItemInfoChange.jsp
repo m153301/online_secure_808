@@ -48,6 +48,7 @@
 			</tr>
 		</tbody>
 	</table>
+	<input type="hidden" name="item_id" value="<%= changedItem.getItemId() %>"/>
 	</form>
 </body>
 </html>
