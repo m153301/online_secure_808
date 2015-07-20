@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import controller.ItemInfoChangeManager;
 
 public class ItemInfoChangeServlet extends HttpServlet{
@@ -20,11 +22,12 @@ public class ItemInfoChangeServlet extends HttpServlet{
 		throws ServletException, IOException{
 
 		request.setCharacterEncoding("UTF-8");
-		
+
 		int itemId = Integer.parseInt(request.getParameter("item_id"));
-		int itemPrice = Integer.parseInt(request.getParameter("item_price"));
-		int itemStock = Integer.parseInt(request.getParameter("item_stock"));
-		String itemName = request.getParameter("item_name");
+		String itemName = StringEscapeUtils.escapeHtml4(request.getParameter("item_name"));
+		int itemPrice = Integer.parseInt(StringEscapeUtils.escapeHtml4(request.getParameter("item_price")));
+		int itemStock = Integer.parseInt(StringEscapeUtils.escapeHtml4(request.getParameter("item_stock")));
+
 		
 		ItemInfoChangeManager iicm = new ItemInfoChangeManager();
 		
