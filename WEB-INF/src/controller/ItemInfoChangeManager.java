@@ -24,5 +24,16 @@ public class ItemInfoChangeManager {
 		return items;
 	}
 	
+	public void updateItemInfo(int itemId, String itemName, int itemPrice, int itemStock){
+		ItemDAO itemDAO = new ItemDAO();
+		this.connection = itemDAO.createConnection();
+
+		itemDAO.updateItemInfo(itemId, itemName, itemPrice, itemStock, connection);
+		itemDAO.closeConnection(this.connection);
+
+		this.connection = null;
+	
+	}
+	
 	
 }

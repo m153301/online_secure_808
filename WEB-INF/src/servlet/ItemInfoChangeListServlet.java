@@ -26,6 +26,7 @@ public class ItemInfoChangeListServlet extends HttpServlet{
 		public void doPost(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException,IOException{
 			
+			request.setCharacterEncoding("UTF-8");
 			ItemInfoChangeManager iicm = new ItemInfoChangeManager();
 			List<Item> items = iicm.searchItemInfoAll();
 			request.setAttribute("items", items);
