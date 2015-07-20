@@ -5,3 +5,4 @@ WEB-INF/src/utility/SecureConnection.java
 WEB-INF/classes/
 work/
 .classpath
+*.class

@@ -87,6 +87,16 @@
 		<servlet-name>OrderedBrowseServlet</servlet-name>
 		<url-pattern>/jsp/worker/OrderedBrowseServlet</url-pattern>
 	</servlet-mapping>
-	
+
+	<servlet>
+		<servlet-name>ItemInfoChangeListServlet</servlet-name>
+		<servlet-class>servlet.ItemInfoChangeListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ItemInfoChangeListServlet</servlet-name>
+		<url-pattern>/jsp/worker/ItemInfoChangeListServlet</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>
 
