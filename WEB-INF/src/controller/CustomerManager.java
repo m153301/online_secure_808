@@ -66,7 +66,7 @@ public class CustomerManager{
 		
 	}
 	
-	private int check(String user_id) {
+	public int check(String user_id) {
 		// TODO Auto-generated method stub
 		UserDAO dao = new UserDAO();
 		this.connection = dao.createConnection();
