@@ -18,6 +18,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 import beans.Item;
 import beans.Ordered;
+import beans.User;
 import controller.ItemInfoRegistManager;
 
 
@@ -56,8 +57,10 @@ public class ItemInfoRegistServlet extends HttpServlet{
 
 		//セッションを実装したらここを使う
 		//セッションからユーザIDを取得
-		HttpSession session = request.getSession(true);
-		Ordered ordered = new Ordered(0, session.getId(), item_id, item_stock, date);
+		HttpSession session = request.getSession();
+		User user = (User)session.getAttribute("worker");
+
+		Ordered ordered = new Ordered(0, user.getUserId(), item_id, item_stock, date);
 
 		//セッションを実装していないときは、user_idは指定
 		//Ordered ordered = new Ordered(0, "3510", item_id, item_stock, date);
