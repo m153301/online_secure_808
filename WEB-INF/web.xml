@@ -150,7 +150,6 @@
 	
 	<filter-mapping>
 		<filter-name>AttackFilter</filter-name>
-		<url-pattern>/jsp/worker/*</url-pattern>
 		<url-pattern>/jsp/customer/*</url-pattern>
 	</filter-mapping>
 	

@@ -57,8 +57,8 @@ public class AttackFilter implements Filter{
 		// セッション取得
 		HttpSession session = request.getSession();
 		// 認証済みならリクエストページへ
-		//ちょっとぶさいくになってしまってもうしわけない
-		if(session.getAttribute("worker") != null && session.getAttribute("customer") != null){
+		
+		if(session.getAttribute("customer") != null){
 			chain.doFilter(request,response);
 			return;
 		}
