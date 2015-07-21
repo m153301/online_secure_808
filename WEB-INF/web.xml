@@ -89,7 +89,6 @@
 	</servlet-mapping>
 
 	<servlet>
-<<<<<<< HEAD
 		<servlet-name>CustomerInfoChangeServlet</servlet-name>
 		<servlet-class>servlet.CustomerInfoChangeServlet</servlet-class>
 	</servlet>
@@ -97,7 +96,7 @@
 		<servlet-name>CustomerInfoChangeServlet</servlet-name>
 		<url-pattern>/jsp/customer/CustomerInfoChangeServlet</url-pattern>
 	</servlet-mapping>
-=======
+	<servlet>
 		<servlet-name>ItemInfoChangeListServlet</servlet-name>
 		<servlet-class>servlet.ItemInfoChangeListServlet</servlet-class>
 	</servlet>
@@ -115,7 +114,6 @@
 		<url-pattern>/jsp/worker/ItemInfoChangeServlet</url-pattern>
 	</servlet-mapping>
 
->>>>>>> feature/ItemInfoChange
 
 </web-app>
 
