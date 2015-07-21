@@ -18,7 +18,7 @@
 		</form>
 		<br>
 		☆その他☆<br>
-		<a href="/online_secure_808/jsp/customer/CustomerInfoChange.jsp">お客様情報の変更</a><br>
+		<a href="./CustomerInfoChange.jsp">お客様情報の変更</a><br>
 		<a href="LogOut.jsp">ログアウト</a><br>
 	</div>
 </body></html>
