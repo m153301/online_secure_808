@@ -108,17 +108,12 @@ public class ItemDAO extends DriverAccessor{
 
 			stmt.executeUpdate();
 			stmt.close();
-
-			stmt.close();
-			rs.close();
 		}
 		catch(SQLException e){
 				e.printStackTrace();
 		}
 		finally {
-			}
-	}
-			return itemList;
+		}
 		}
 
 }

@@ -128,10 +128,11 @@
 		<servlet-name>CustomerInfoChangeServlet</servlet-name>
 		<url-pattern>/jsp/customer/CustomerInfoChangeServlet</url-pattern>
 	</servlet-mapping>
+
 	<servlet>
-	</servlet-mapping>
 		<servlet-name>ItemInfoChangeListServlet</servlet-name>
 		<servlet-class>servlet.ItemInfoChangeListServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>ItemInfoChangeListServlet</servlet-name>
@@ -148,16 +149,16 @@
 	</servlet-mapping>
 	
 	<filter>
-	<filter-name>
-		CustomerFilter
-	</filter-name>
-	<filter-class>
-		servlet.CustomerFilter
-	</filter-class>
-	<init-param>
-		<param-name>loginPage</param-name>
-		<param-value>/jsp/common/Login.jsp</param-value>
-	</init-param>
+		<filter-name>
+			CustomerFilter
+		</filter-name>
+		<filter-class>
+			servlet.CustomerFilter
+		</filter-class>
+		<init-param>
+			<param-name>loginPage</param-name>
+			<param-value>/jsp/common/Login.jsp</param-value>
+		</init-param>
 	</filter>
 	
 	<filter-mapping>
@@ -166,16 +167,16 @@
 	</filter-mapping>
 	
 	<filter>
-	<filter-name>
-		AttackFilter
-	</filter-name>
-	<filter-class>
-		servlet.AttackFilter
-	</filter-class>
-	<init-param>
-		<param-name>loginPage</param-name>
-		<param-value>/jsp/common/Login.jsp</param-value>
-	</init-param>
+		<filter-name>
+			AttackFilter
+		</filter-name>
+		<filter-class>
+			servlet.AttackFilter
+		</filter-class>
+		<init-param>
+			<param-name>loginPage</param-name>
+			<param-value>/jsp/common/Login.jsp</param-value>
+		</init-param>
 	</filter>
 	
 	<filter-mapping>
@@ -183,5 +184,6 @@
 		<url-pattern>/jsp/worker/*</url-pattern>
 		<url-pattern>/jsp/customer/*</url-pattern>
 	</filter-mapping>
+
 </web-app>
 
