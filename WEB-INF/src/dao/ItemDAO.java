@@ -66,17 +66,13 @@ public class ItemDAO extends DriverAccessor{
 		}
 		return item_id;
 	}
-	
 	//商品一覧を取得する
 	public ArrayList<Item> getItemInfoDAO(Connection connection){
-		
 		ArrayList<Item> itemList = new ArrayList<Item>();
-		
 		try{
 			String sql = "select * from item;";
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
-			
 			while( rs.next() )
 			{
 
@@ -95,7 +91,6 @@ public class ItemDAO extends DriverAccessor{
 				e.printStackTrace();
 		}
 		finally {
-			
 			}
 			return itemList;
 		}
@@ -112,15 +107,18 @@ public class ItemDAO extends DriverAccessor{
 			stmt.setInt(4, itemId);
 
 			stmt.executeUpdate();
-		
 			stmt.close();
+
+			stmt.close();
+			rs.close();
 		}
 		catch(SQLException e){
 				e.printStackTrace();
 		}
 		finally {
-			
 			}
 	}
+			return itemList;
+		}
 
 }
