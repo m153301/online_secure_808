@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" import= "java.util.List" %>
 
 <html>
 <head>
@@ -8,6 +8,15 @@
 <body>
 	<br>
 	<br>
+	<%
+		List<String> errors = (List<String>)request.getAttribute("errors");
+		if( errors != null ){
+			out.println("<font color='#f00'>");
+			for(String error : errors) out.println(error + "<br>");
+			out.println("</font>");
+		}
+	%>
+	<form action="./CustomerInfoChangeServlet", methd="post">
 	<table style="width: 360px; margin-left: auto; margin-right: auto; height: 360px;" border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr align="center">
@@ -38,12 +47,17 @@
 				</td>
 			</tr>
 			<tr>
+				<td style="text-align: center; width: 180px; height: 60px;">パスワード</td>
+				<td style="text-align: center; width: 180px; height: 60px;"><input name="customer_password" type="text"></td>
+			</tr>
+			<tr>
 				<td colspan="2" rowspan="1" style="text-align: center; width: 180px; height: 60px;">
-					<button onclick="location.href='CustomerInfoChangeCheck.jsp'" name="enter">確認</button>
+					<input type="submit" value="確認"></input>
 				</td>
 			</tr>
 		</tbody>
 	</table>
+	</form>
 	<br>
 	<br>
 	<br>

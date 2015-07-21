@@ -103,6 +103,39 @@ public class CustomerDAO extends DriverAccessor{
 			
 		}
 	}
+	
+	public void updateTel(String userId, int tel, Connection connection){
+		try{
+			String sql = "update customer set tel = ? where user_id = ?";
 
+			PreparedStatement stmt = connection.prepareStatement(sql);
+
+			stmt.setInt(1, tel);
+			stmt.setString(2, userId);
+			stmt.executeUpdate();
+			stmt.close();
+
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+		}
+	}
+
+	public void updateCardId(String userId, int cardId, Connection connection){
+		try{
+			String sql = "update customer set creditcard_id = ? where user_id = ?";
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+
+			stmt.setInt(1, cardId);
+			stmt.setString(2, userId);
+			stmt.executeUpdate();
+			stmt.close();
+
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+		}
+	}
 
 }

@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import utility.DriverAccessor;
 import beans.Item;
@@ -65,6 +66,61 @@ public class ItemDAO extends DriverAccessor{
 		}
 		return item_id;
 	}
+	
+	//商品一覧を取得する
+	public ArrayList<Item> getItemInfoDAO(Connection connection){
+		
+		ArrayList<Item> itemList = new ArrayList<Item>();
+		
+		try{
+			String sql = "select * from item;";
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while( rs.next() )
+			{
 
+				Item item = new Item( 
+						rs.getInt( "item_id" ), 
+						rs.getString( "item_name" ),
+						rs.getInt( "item_price"  ), 
+						rs.getInt( "item_stock"  ) );
+				itemList.add( item );
+			}
+
+			stmt.close();
+			rs.close();
+		}
+		catch(SQLException e){
+				e.printStackTrace();
+		}
+		finally {
+			
+			}
+			return itemList;
+		}
+
+	public void updateItemInfo(int itemId, String itemName, int itemPrice, int itemStock, Connection connection){
+		try{
+			String sql = "update item set item_name = ?, item_price = ?, item_stock = ? where item_id = ?;";
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+
+			stmt.setString(1, itemName);
+			stmt.setInt(2, itemPrice);
+			stmt.setInt(3, itemStock);
+			stmt.setInt(4, itemId);
+
+			stmt.executeUpdate();
+		
+			stmt.close();
+		}
+		catch(SQLException e){
+				e.printStackTrace();
+		}
+		finally {
+			
+			}
+	}
 
 }

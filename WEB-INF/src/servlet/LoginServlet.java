@@ -73,7 +73,7 @@ public class LoginServlet extends HttpServlet{
 				
 				if(user.getRole().equals("customer") ){
 					session.setAttribute("customer",user);
-					
+
 					getServletContext().getRequestDispatcher("/jsp/customer/CustomerTop.jsp").forward(request, response);
 				}
 				
@@ -84,6 +84,5 @@ public class LoginServlet extends HttpServlet{
 				}
 			}
 		}
-		
 	}
 }
