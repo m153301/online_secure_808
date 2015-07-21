@@ -15,7 +15,7 @@ ArrayList<Item> itemList = (ArrayList)request.getAttribute("ItemList");
 	<div style="text-align: right;"><a href="CustomerTop.jsp">トップに戻る</a><br></div>
 	<br>
 	<br>
-	<form action="../customer/ItemPurchaseServlet" method="post">
+	
 	<table style="text-align: left; width: 470px; margin-left: auto; margin-right: auto; height: 480px;" border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr align="center">
@@ -33,6 +33,7 @@ ArrayList<Item> itemList = (ArrayList)request.getAttribute("ItemList");
 			
 			while(iterator.hasNext())
 			{
+			out.println("<form action='../customer/ItemPurchaseServlet' method='post'>");
 				Item item = iterator.next();
 				out.println("<tr>");
 					out.println("<td style='text-align: center; width: 20px; height: 60px;'>" + item.getItemId() + "</td>");
@@ -47,11 +48,12 @@ ArrayList<Item> itemList = (ArrayList)request.getAttribute("ItemList");
 					out.println("<input type='hidden' name='itemPRICE' value=" + item.getItemPrice() + ">");
 					out.println("<input type='hidden' name='itemSTOCK' value=" + item.getItemStock() + ">");
 				out.println("</tr>");
+				out.println("</form>");
 			}
 			%>
 		
 		</tbody>
 	</table>
-	</form>
+	
 </body>
 </html>
