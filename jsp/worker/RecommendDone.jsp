@@ -13,7 +13,7 @@
 		<br>
 		<br>
 		<br>
-		<a href="ClerkTop.jsp">トップに戻る</a><br>
+		<a href="WorkerTop.jsp">トップに戻る</a><br>
 	</div>
 </body>
 </html>
