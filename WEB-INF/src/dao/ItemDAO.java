@@ -100,4 +100,27 @@ public class ItemDAO extends DriverAccessor{
 			return itemList;
 		}
 
+	public void updateItemInfo(int itemId, String itemName, int itemPrice, int itemStock, Connection connection){
+		try{
+			String sql = "update item set item_name = ?, item_price = ?, item_stock = ? where item_id = ?;";
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+
+			stmt.setString(1, itemName);
+			stmt.setInt(2, itemPrice);
+			stmt.setInt(3, itemStock);
+			stmt.setInt(4, itemId);
+
+			stmt.executeUpdate();
+		
+			stmt.close();
+		}
+		catch(SQLException e){
+				e.printStackTrace();
+		}
+		finally {
+			
+			}
+	}
+
 }

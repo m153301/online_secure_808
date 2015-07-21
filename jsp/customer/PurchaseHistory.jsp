@@ -1,10 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
-<%@ page import="beans.Purchase" %> 
-<%@ page import="java.util.ArrayList" %> 
-<%@ page import="java.util.Iterator" %> 
-<% 
-ArrayList<Purchase> purchaseList = (ArrayList)request.getAttribute("PurchaseList"); 
-%>
 <html>
 <head>
 	<title>PurchaseHistory</title>
@@ -21,20 +15,31 @@ ArrayList<Purchase> purchaseList = (ArrayList)request.getAttribute("PurchaseList
 			<tr>
 				<td colspan="3" rowspan="1" style="text-align: center; width: 150px; height: 60px;">購入履歴</td>
 			</tr>
-			<%
-			Iterator<Purchase> iterator=purchaseList.iterator();
-			
-			while(iterator.hasNext())
-			{
-				Purchase purchase = iterator.next();
-				out.println("<tr>");
-					out.println("<td style='text-align: center; width: 180px; height: 60px;'>" + purchase.getBuyDate() + "</td>");
-					out.println("<td style='text-align: center; width: 180px; height: 60px;'>" + purchase.getItemName() + "</td>");
-					out.println("<td style='text-align: center; width: 180px; height: 60px;'>" + purchase.getPurchaceQuantity() + "</td>");
-
-				out.println("</tr>");
-			}
-			%>
+			<tr>
+				<td style="text-align: center; width: 150px; height: 60px;">2015/05/22</td>
+				<td style="text-align: center; width: 150px; height: 60px;">ままままま</td>
+				<td style="text-align: center; width: 180px; height: 60px;">5個</td>
+			</tr>
+			<tr>
+				<td style="text-align: center; width: 150px; height: 60px;">2015/05/19</td>
+				<td style="text-align: center; width: 150px; height: 60px;">つつつつつ</td>
+				<td style="text-align: center; width: 180px; height: 60px;">9個</td>
+			</tr>
+			<tr>
+				<td style="text-align: center; width: 150px; height: 60px;">2015/05/15</td>
+				<td style="text-align: center; width: 150px; height: 60px;">たたたたた</td>
+				<td style="text-align: center; width: 180px; height: 60px;">3個</td>
+			</tr>
+			<tr>
+				<td style="text-align: center; width: 150px; height: 60px;">2015/05/15</td>
+				<td style="text-align: center; width: 150px; height: 60px;">けけけけけ</td>
+				<td style="text-align: center; width: 180px; height: 60px;">10個</td>
+			</tr>
+			<tr>
+				<td style="text-align: center; width: 180px; height: 60px;">2015/05/10</td>
+				<td style="text-align: center; width: 180px; height: 60px;">うめ</td>
+				<td style="text-align: center; width: 180px; height: 60px;">1個</td>
+			</tr>
 		</tbody>
 	</table>
 </body>

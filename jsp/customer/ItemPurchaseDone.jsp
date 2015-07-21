@@ -13,6 +13,7 @@
 		<br>
 		<br>
 		<br>
+		<a href="ItemList.jsp">買い物を続ける</a><br><br>
 		<a href="CustomerTop.jsp">買い物を終わる</a><br>
 	</div>
 	</body>

@@ -5,17 +5,15 @@ import java.util.Date;
 public class Purchase {
 	private int purchaceId;
 	private int itemId;
-	private String itemName;
 	private Date buyDate;
 	private int purchaceQuantity;
 	private String userId;
 	
-	public Purchase(int purchaceId, int itemId, String itemName, Date buyDate,
+	public Purchase(int purchaceId, int itemId, Date buyDate,
 			int purchaceQuantity, String userId) {
 		super();
 		this.purchaceId = purchaceId;
 		this.itemId = itemId;
-		this.itemName = itemName;
 		this.buyDate = buyDate;
 		this.purchaceQuantity = purchaceQuantity;
 		this.userId = userId;
@@ -32,12 +30,6 @@ public class Purchase {
 	}
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
-	}
-	public String getItemName() {
-		return itemName;
-	}
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
 	}
 	public Date getBuyDate() {
 		return buyDate;

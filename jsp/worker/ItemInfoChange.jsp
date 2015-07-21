@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.List" import="beans.Item" %>
 <html>
 <head>
 	<title>ItemInfoChange</title>
@@ -10,6 +10,20 @@
 	</div>
 	<br>
 	<br>
+	<%
+		request.setCharacterEncoding("UTF-8");
+		HttpSession hs = request.getSession();
+		List<Item> items = (List<Item>)hs.getAttribute("items");
+	    Item changedItem = null;
+		for( Item item : items ){
+			if( item.getItemId() == Integer.parseInt(request.getParameter("item_id")) ){
+				changedItem = item;
+				break;
+			}
+		}
+	%>
+
+	<form action="./ItemInfoChangeServlet" method="post">
 	<table style="text-align: left; width: 360px; margin-left: auto; margin-right: auto; height: 360px;" border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr align="center">
@@ -18,22 +32,24 @@
 			<tr>
 				<td style="text-align: center; width: 180px; height: 60px;">品名<br>
 			</td>
-				<td style="text-align: center; width: 180px; height: 60px;"><input name="item_name" value="しめじ" type="text"></td>
+				<td style="text-align: center; width: 180px; height: 60px;"><input name="item_name" value="<%= changedItem.getItemName() %>" type="text"></td>
 			</tr>
 			<tr>
 				<td style="text-align: center; width: 180px; height: 60px;">単価</td>
-				<td style="text-align: center; width: 180px; height: 60px;"><input name="item_price" value="200" type="text"></td>
+				<td style="text-align: center; width: 180px; height: 60px;"><input name="item_price" value="<%= changedItem.getItemPrice() %>" type="text"></td>
 			</tr>
 			<tr>
 				<td style="text-align: center; width: 180px; height: 60px;">在庫</td>
-				<td style="text-align: center; width: 180px; height: 60px;"><input name="item_stock" value="3" type="text"></td>
+				<td style="text-align: center; width: 180px; height: 60px;"><input name="item_stock" value="<%= changedItem.getItemStock() %>" type="text"></td>
 			</tr>
 			<tr>
 				<td colspan="2" rowspan="1" style="text-align: center; width: 180px; height: 60px;">
-					<button onclick="location.href='ItemInfoChangeCheck.jsp'" name="enter">確認</button>
+					<input type="submit" value="変更" />
 				</td>
 			</tr>
 		</tbody>
 	</table>
+	<input type="hidden" name="item_id" value="<%= changedItem.getItemId() %>"/>
+	</form>
 </body>
 </html>
