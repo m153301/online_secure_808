@@ -52,6 +52,8 @@ while(iterator.hasNext()){
 }
 %>
 
+		<a href="WorkerTop.jsp">トップに戻る</a><br>
+
 </div>
 </body>
 
