@@ -96,8 +96,11 @@
 		<servlet-name>CustomerInfoChangeServlet</servlet-name>
 		<url-pattern>/jsp/customer/CustomerInfoChangeServlet</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>ItemInfoChangeListServlet</servlet-name>
 		<servlet-class>servlet.ItemInfoChangeListServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>ItemInfoChangeListServlet</servlet-name>
@@ -146,7 +149,7 @@
 	</filter>
 	
 	<filter-mapping>
-		<filter-name>CustomerFilter</filter-name>
+		<filter-name>AttackFilter</filter-name>
 		<url-pattern>/jsp/worker/*</url-pattern>
 		<url-pattern>/jsp/customer/*</url-pattern>
 	</filter-mapping>
