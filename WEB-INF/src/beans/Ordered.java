@@ -8,6 +8,8 @@ public class Ordered {
 	private int itemId;
 	private int orderQuantity;
 	private Date orderDate;
+	
+	public Ordered(){}
 
 	public Ordered(int orderId, String userId, int itemId, int orderQuantity,
 			Date orderDate) {
