@@ -27,4 +27,16 @@ public class ItemPurchaseManager {
 		this.connection = null;
 		
 	}
+	
+	public void CalculateItem(int item_id,int quant){
+		
+		PurchaseDAO purchaseDAO = new PurchaseDAO();
+		
+		this.connection = purchaseDAO.createConnection();
+		purchaseDAO.CalculateItem(item_id,quant,connection);
+		purchaseDAO.closeConnection(this.connection);
+
+		this.connection = null;
+		
+	}
 }

@@ -14,6 +14,8 @@ import java.util.Date;
 import utility.DriverAccessor;
 import beans.Purchase;
 import beans.User;
+import beans.Item;
+
 import java.util.Calendar;
 
 public class PurchaseDAO extends DriverAccessor{
@@ -59,6 +61,30 @@ public class PurchaseDAO extends DriverAccessor{
 			e.printStackTrace();
 
 		} finally {
+		}
+	}
+	
+	public void CalculateItem(int item_id,int num,Connection connection){
+		try{
+
+			String sql = "update item set item_stock = " + num + " where item_id = " + item_id;
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+
+			//stmt.setInt(1, item.getItemId());
+			//stmt.setString(2, item.getItemName());
+			//stmt.setInt(3, item.getItemPrice());
+			//stmt.setInt(4, item.getItemStock());
+
+			stmt.executeUpdate();
+
+			stmt.close();
+		}catch(SQLException e){
+
+			e.printStackTrace();
+
+		} finally {
+
 		}
 	}
 }

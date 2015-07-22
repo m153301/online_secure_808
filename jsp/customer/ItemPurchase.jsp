@@ -57,6 +57,7 @@ ArrayList<Item> itemList = (ArrayList)request.getAttribute("ItemList");
 			<input type="hidden" name="ItemID" value=<%= request.getAttribute("ItemID") %>>
 			<input type="hidden" name="ItemNAME" value=<%= request.getAttribute("ItemNAME") %>>
 			<input type="hidden" name="ItemPRICE" value=<%= request.getAttribute("ItemPRICE") %>>
+			<input type="hidden" name="ItemSTOCK" value=<%= request.getAttribute("ItemSTOCK") %>>
 		</tbody>
 	</table>
 	</form>

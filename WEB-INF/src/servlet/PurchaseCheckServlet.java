@@ -29,8 +29,10 @@ public class PurchaseCheckServlet extends HttpServlet{
 
 			request.setCharacterEncoding("UTF-8");
 			int itemId = Integer.parseInt(request.getParameter("ItemID"));
-			//int itemPrice = Integer.parseInt(request.getParameter("ItemPRICE"));
+			int itemStock = Integer.parseInt(request.getParameter("ItemSTOCK"));
 			int purQuan = Integer.parseInt(request.getParameter("ItemNUM"));
+			
+			int itemLeft = itemStock - purQuan;
 
 			//セッション取得
 			HttpSession session = request.getSession(true);
@@ -41,6 +43,9 @@ public class PurchaseCheckServlet extends HttpServlet{
 			//購入登録
 			ItemPurchaseManager ipManage = new ItemPurchaseManager();
 			ipManage.RegistPurchase(itemId, purQuan, user);
+			
+			ItemPurchaseManager ipManage2 = new ItemPurchaseManager();
+			ipManage2.CalculateItem(itemId, itemLeft);
 			
 			getServletContext().getRequestDispatcher("/jsp/customer/ItemPurchaseDone.jsp").forward(request, response); 
 			

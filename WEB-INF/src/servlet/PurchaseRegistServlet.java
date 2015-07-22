@@ -32,6 +32,7 @@ public class PurchaseRegistServlet extends HttpServlet{
 			String itemName = request.getParameter("ItemNAME");
 			int itemPrice = Integer.parseInt(request.getParameter("ItemPRICE"));
 			int purQuan = Integer.parseInt(request.getParameter("number"));
+			int itemStock = Integer.parseInt(request.getParameter("ItemSTOCK"));
 			int price = itemPrice * purQuan;
 
 			if(purQuan == 0)
@@ -54,6 +55,7 @@ public class PurchaseRegistServlet extends HttpServlet{
 				request.setAttribute("ItemNAME", itemName);
 				request.setAttribute("ItemPRICE", itemPrice);
 				request.setAttribute("ItemSTOCK", purQuan);
+				request.setAttribute("ItemSTOCK2", itemStock);
 				request.setAttribute("PRICE", price);
 				getServletContext().getRequestDispatcher("/jsp/customer/ItemPurchaseCheck.jsp").forward(request, response); 
 			}

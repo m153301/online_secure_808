@@ -41,6 +41,7 @@
 			<input type="hidden" name="ItemID" value=<%= request.getAttribute("ItemID") %>>
 			<input type="hidden" name="ItemNUM" value=<%= request.getAttribute("ItemSTOCK") %>>
 			<input type="hidden" name="ItemPRICE" value=<%= request.getAttribute("ItemPRICE") %>>
+			<input type="hidden" name="ItemSTOCK" value=<%= request.getAttribute("ItemSTOCK2") %>>
 	</table>
 	</form>
 </body>
