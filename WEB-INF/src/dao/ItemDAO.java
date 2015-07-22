@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 
 import utility.DriverAccessor;
 import beans.Item;
@@ -94,6 +95,25 @@ public class ItemDAO extends DriverAccessor{
 			}
 			return itemList;
 		}
+	
+	public int selectItemStock(int itemId, Connection connection){
+		try{
+			String sql = "select item_stock from item where item_id = " + itemId + ";";
+
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			rs.next();
+			
+			int presentItemStock = rs.getInt("item_stock");
+			stmt.close();
+
+			return presentItemStock;
+
+		} catch(SQLException e){
+			e.printStackTrace();
+			return -1;
+		} finally {}
+	}
 
 	public void updateItemInfo(int itemId, String itemName, int itemPrice, int itemStock, Connection connection){
 		try{
@@ -114,6 +134,7 @@ public class ItemDAO extends DriverAccessor{
 		}
 		finally {
 		}
-		}
+	}
+
 
 }
