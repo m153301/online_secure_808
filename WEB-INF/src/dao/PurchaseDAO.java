@@ -71,11 +71,6 @@ public class PurchaseDAO extends DriverAccessor{
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
 
-			//stmt.setInt(1, item.getItemId());
-			//stmt.setString(2, item.getItemName());
-			//stmt.setInt(3, item.getItemPrice());
-			//stmt.setInt(4, item.getItemStock());
-
 			stmt.executeUpdate();
 
 			stmt.close();
