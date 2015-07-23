@@ -23,7 +23,7 @@ public class CustomerRegistServlet extends HttpServlet{
 		public void doPost(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException,IOException{
 
-			request.setCharacterEncoding("Windows-31J");
+			request.setCharacterEncoding("UTF-8");
 			
 			String customer_name = StringEscapeUtils.escapeHtml4(request.getParameter("customer_name"));
 			String tel = StringEscapeUtils.escapeHtml4(request.getParameter("tel"));

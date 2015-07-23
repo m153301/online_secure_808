@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException{
 		
-		request.setCharacterEncoding("Windows-31J");
+		request.setCharacterEncoding("UTF-8");
 		
 		String user_id = request.getParameter("id");
 		String password = request.getParameter("pass");

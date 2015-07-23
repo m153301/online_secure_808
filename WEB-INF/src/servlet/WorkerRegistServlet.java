@@ -23,7 +23,7 @@ public class WorkerRegistServlet extends HttpServlet{
 		public void doPost(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException,IOException{
 
-			request.setCharacterEncoding("Windows-31J");
+			request.setCharacterEncoding("UTF-8");
 			
 			String user_name = StringEscapeUtils.escapeHtml4(request.getParameter("worker_name"));
 			String user_id = StringEscapeUtils.escapeHtml4(request.getParameter("worker_id"));
