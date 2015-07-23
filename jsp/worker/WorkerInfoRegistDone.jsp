@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <html>
 <head>
-	<title>ClerkInfoRegistDone</title>
+	<title>WorkerInfoRegistDone</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
