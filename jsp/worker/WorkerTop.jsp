@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ page import="beans.User" %>
 <html>
 <head>
   <title>ClerkTop</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-かとうさん ようこそ<br>
+<%
+	User user = (User)session.getAttribute("worker");
+	out.println(user.getUserName() + "さん ようこそ！<br>");
+%>
 <br>
 	<div class="title">
 		☆商品☆<br>

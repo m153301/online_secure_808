@@ -87,6 +87,38 @@
 		<servlet-name>OrderedBrowseServlet</servlet-name>
 		<url-pattern>/jsp/worker/OrderedBrowseServlet</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>ItemListServlet</servlet-name>
+		<servlet-class>servlet.ItemListServlet</servlet-class></servlet>
+	<servlet-mapping>
+		<servlet-name>ItemListServlet</servlet-name>
+		<url-pattern>/jsp/customer/ItemListServlet</url-pattern></servlet-mapping>
+	<servlet>
+		<servlet-name>ItemPurchaseServlet</servlet-name>
+		<servlet-class>servlet.ItemPurchaseServlet</servlet-class></servlet>
+	<servlet-mapping>
+		<servlet-name>ItemPurchaseServlet</servlet-name>
+		<url-pattern>/jsp/customer/ItemPurchaseServlet</url-pattern></servlet-mapping>
+	<servlet>
+		<servlet-name>PurchaseRegistServlet</servlet-name>
+		<servlet-class>servlet.PurchaseRegistServlet</servlet-class></servlet>
+	<servlet-mapping>
+		<servlet-name>PurchaseRegistServlet</servlet-name>
+		<url-pattern>/jsp/customer/PurchaseRegistServlet</url-pattern></servlet-mapping>
+	<servlet>
+		<servlet-name>PurchaseCheckServlet</servlet-name>
+		<servlet-class>servlet.PurchaseCheckServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PurchaseCheckServlet</servlet-name>
+		<url-pattern>/jsp/customer/PurchaseCheckServlet</url-pattern></servlet-mapping>
+	<servlet>
+		<servlet-name>PurchaseHistoryServlet</servlet-name>
+		<servlet-class>servlet.PurchaseHistoryServlet</servlet-class></servlet>
+	<servlet-mapping>
+		<servlet-name>PurchaseHistoryServlet</servlet-name>
+		<url-pattern>/jsp/customer/PurchaseHistoryServlet</url-pattern></servlet-mapping>
+
 
 	<servlet>
 		<servlet-name>CustomerInfoChangeServlet</servlet-name>
@@ -115,19 +147,18 @@
 		<servlet-name>ItemInfoChangeServlet</servlet-name>
 		<url-pattern>/jsp/worker/ItemInfoChangeServlet</url-pattern>
 	</servlet-mapping>
-
 	
 	<filter>
-	<filter-name>
-		CustomerFilter
-	</filter-name>
-	<filter-class>
-		servlet.CustomerFilter
-	</filter-class>
-	<init-param>
-		<param-name>loginPage</param-name>
-		<param-value>/jsp/common/Login.jsp</param-value>
-	</init-param>
+		<filter-name>
+			CustomerFilter
+		</filter-name>
+		<filter-class>
+			servlet.CustomerFilter
+		</filter-class>
+		<init-param>
+			<param-name>loginPage</param-name>
+			<param-value>/jsp/common/Login.jsp</param-value>
+		</init-param>
 	</filter>
 	
 	<filter-mapping>
@@ -136,22 +167,22 @@
 	</filter-mapping>
 	
 	<filter>
-	<filter-name>
-		AttackFilter
-	</filter-name>
-	<filter-class>
-		servlet.AttackFilter
-	</filter-class>
-	<init-param>
-		<param-name>loginPage</param-name>
-		<param-value>/jsp/common/Login.jsp</param-value>
-	</init-param>
+		<filter-name>
+			AttackFilter
+		</filter-name>
+		<filter-class>
+			servlet.AttackFilter
+		</filter-class>
+		<init-param>
+			<param-name>loginPage</param-name>
+			<param-value>/jsp/common/Login.jsp</param-value>
+		</init-param>
 	</filter>
 	
 	<filter-mapping>
 		<filter-name>AttackFilter</filter-name>
 		<url-pattern>/jsp/customer/*</url-pattern>
 	</filter-mapping>
-	
+
 </web-app>
 
