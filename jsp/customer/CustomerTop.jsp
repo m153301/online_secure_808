@@ -1,12 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ page import="beans.User" %>
+<%@ page import="beans.Item" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Iterator" %>
 <html>
 <head>
+	<title>CustomerTop</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<%
+	User user = (User)session.getAttribute("customer");
+	out.println(user.getUserName() + "さん ようこそ！<br><br>");
+	ArrayList<Item> recommendedItemList = (ArrayList)request.getAttribute("RecommendedItemList");
+%>
 	<div class="title">
 		☆おすすめ☆<br>
-		キャベツ<br>
+		<%
+			//iteratorの生成
+			Iterator<Item> iterator=recommendedItemList.iterator();
+			//順番に中身がなくなるまで取り出す
+			while(iterator.hasNext())
+			{
+				Item item = iterator.next();
+				out.println(item.getItemName() + "<br>");
+			}
+		%>
 		<br>
 		☆買い物☆<br>
 		<form method = "post" action="../customer/ItemListServlet">
