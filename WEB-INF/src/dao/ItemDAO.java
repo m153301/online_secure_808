@@ -14,6 +14,7 @@ import java.util.Date;
 
 import utility.DriverAccessor;
 import beans.Item;
+import beans.Recommend;
 
 public class ItemDAO extends DriverAccessor{
 
@@ -136,5 +137,37 @@ public class ItemDAO extends DriverAccessor{
 		}
 	}
 
-
+	//おすすめから商品を取得する
+	public ArrayList<Item> getItemFromRecommend(ArrayList<Recommend> recommendList, Connection connection){
+		
+		ArrayList<Item> itemList = new ArrayList<Item>();
+		
+		for ( int i=0; i < recommendList.size(); i++ ) {
+			try{
+				Recommend recommend = recommendList.get(i);
+				
+				String sql = "select * from item where item_id = " + recommend.getItemId() + ";";
+				Statement stmt = connection.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				rs.next();
+				Item item = new Item( 
+						rs.getInt( "item_id" ), 
+						rs.getString( "item_name" ),
+						rs.getInt( "item_price"  ), 
+						rs.getInt( "item_stock"  ) );
+				itemList.add( item );
+				System.out.println(rs.getString( "item_name" ));
+				
+				stmt.close();
+				rs.close();
+			}
+			catch(SQLException e){
+				e.printStackTrace();
+			}
+			finally {
+			
+			}
+		}
+		return itemList;
+	}
 }
