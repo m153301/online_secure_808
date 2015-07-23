@@ -148,6 +148,15 @@
 		<url-pattern>/jsp/worker/ItemInfoChangeServlet</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>RecommendedItemGetServlet</servlet-name>
+		<servlet-class>servlet.RecommendedItemGetServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecommendedItemGetServlet</servlet-name>
+		<url-pattern>/jsp/customer/RecommendedItemGetServlet</url-pattern>
+	</servlet-mapping>
+	
 	<filter>
 		<filter-name>
 			CustomerFilter

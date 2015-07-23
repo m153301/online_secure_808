@@ -6,7 +6,10 @@
 </head>
 <body>
 	<div style="text-align: right;">
-		<a href="CustomerTop.jsp">トップに戻る</a><br><br>
+		<form method = "post" action="../customer/RecommendedItemGetServlet">
+			<input type="submit" value="買い物を終わる">
+		</form>
+		<br><br>
 	</div>
 	<br>
 	<br>
