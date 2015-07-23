@@ -70,7 +70,7 @@ public class RecommendDAO extends DriverAccessor{
 
 				Recommend recommend = new Recommend( 
 						rs.getInt( "item_id" ), 
-						rs.getString( "uesr_id" ),
+						rs.getString( "user_id" ),
 						rs.getDate( "recommend_date" ) );
 				recommendList.add( recommend );
 			}
