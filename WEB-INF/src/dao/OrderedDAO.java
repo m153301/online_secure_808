@@ -65,7 +65,7 @@ public class OrderedDAO extends DriverAccessor{
 	public static ArrayList<Orderedlist> orderedBrowseDAO(Connection connection){
 		try{
 
-			String sql="SELECT ordered.order_id, user.user_name, item.item_name, ordered.order_date, ordered.order_quantity FROM user INNER JOIN (item INNER JOIN ordered ON item.item_id = ordered.item_id) ON ordered.user_id = user.user_id;";
+			String sql="SELECT ordered.order_id, user.user_name, item.item_name, ordered.order_date, ordered.order_quantity FROM user INNER JOIN (item INNER JOIN ordered ON item.item_id = ordered.item_id) ON ordered.user_id = user.user_id ORDER BY ordered.order_id DESC;";
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
