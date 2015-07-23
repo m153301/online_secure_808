@@ -48,7 +48,7 @@
 			</tr>
 			<tr>
 				<td style="text-align: center; width: 180px; height: 60px;">パスワード</td>
-				<td style="text-align: center; width: 180px; height: 60px;"><input name="customer_password" type="text"></td>
+				<td style="text-align: center; width: 180px; height: 60px;"><input name="customer_password" type="password"></td>
 			</tr>
 			<tr>
 				<td colspan="2" rowspan="1" style="text-align: center; width: 180px; height: 60px;">

@@ -12,7 +12,10 @@ ArrayList<Purchase> purchaseList = (ArrayList)request.getAttribute("PurchaseList
 </head>
 <body>
 	<div style="text-align: right;">
-		<a href="CustomerTop.jsp">トップに戻る</a><br>
+		<form method = "post" action="../customer/RecommendedItemGetServlet">
+			<input type="submit" value="買い物を終わる">
+		</form>
+		<br>
 	</div>
 	<br>
 	<br>

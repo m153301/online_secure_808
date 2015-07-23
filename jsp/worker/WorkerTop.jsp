@@ -2,7 +2,7 @@
 <%@ page import="beans.User" %>
 <html>
 <head>
-  <title>ClerkTop</title>
+  <title>WorkerTop</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -33,7 +33,10 @@
 		<br>
 		☆その他☆<br>
 		<a href="../worker/WorkerInfoRegist.jsp">店員登録</a><br>
-		<a href="../common/LogOut.jsp">ログアウト</a><br>
+		<form method = "post" action="../common/LogOutServlet">
+			<input type="submit" value="ログアウト">
+		</form>
+		<br>
 	</div>
 </body>
 </html>
