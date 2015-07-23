@@ -10,8 +10,8 @@
 </head>
 <body>
 <%
-	//User user = (User)session.getAttribute("customer");
-	//out.println(user.getUserName() + "さん ようこそ！<br>");
+	User user = (User)session.getAttribute("customer");
+	out.println(user.getUserName() + "さん ようこそ！<br><br>");
 	ArrayList<Item> recommendedItemList = (ArrayList)request.getAttribute("RecommendedItemList");
 %>
 	<div class="title">
