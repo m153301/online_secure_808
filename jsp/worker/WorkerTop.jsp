@@ -29,7 +29,7 @@
 		<br>
 		☆その他☆<br>
 		<a href="../worker/WorkerInfoRegist.jsp">店員登録</a><br>
-		<a href="LogOut.jsp">ログアウト</a><br>
+		<a href="../common/LogOut.jsp">ログアウト</a><br>
 	</div>
 </body>
 </html>
