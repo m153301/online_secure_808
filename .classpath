@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  	<classpathentry kind="src" path="WEB-INF/src"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4-javadoc.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4-sources.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4-test-sources.jar"/>
@@ -15,4 +16,5 @@
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
 	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>

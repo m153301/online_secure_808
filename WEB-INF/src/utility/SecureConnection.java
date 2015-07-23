@@ -10,7 +10,7 @@ public class SecureConnection{
 	public Mysql generateUser(){
 	
 		try{
-			FileReader fr = new FileReader("/home/tomcat/mysql.txt");
+			FileReader fr = new FileReader("/Users/shu/mysql.txt");
 			BufferedReader br = new BufferedReader(fr);
 			
 			Mysql mysql_user = new Mysql();
