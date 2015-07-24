@@ -10,7 +10,7 @@ import utility.DriverAccessor;
 
 public class AccLockDAO extends DriverAccessor{
 	
-	public void Regist(String ip, Connection connection){
+	public void ipRegist(String ip, Connection connection){
 		
 		try{
 			String sql="insert into ip_lock(ip,fail_count) values (?, 0);";
@@ -30,7 +30,7 @@ public class AccLockDAO extends DriverAccessor{
 	}
 
 	//ログイン失敗回数をとってくる
-	public Ip_lock check(String ip, Connection connection) {
+	public Ip_lock getCount(String ip, Connection connection) {
 		// TODO Auto-generated method stub
 		try{
 			String sql="select fail_count from ip_lock where ip = ?;";

@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet{
 		//そのままipアドレス登録しちゃう
 		LoginManager look = new LoginManager();
 		//登録がない場合はインクリメントして失敗回数をもってくる
-		Ip_lock count = look.overlap(ip);
+		Ip_lock count = look.checkOverlap(ip);
 
 		
 		PasswordEncryption passenc = new PasswordEncryption();
@@ -64,14 +64,15 @@ public class LoginServlet extends HttpServlet{
 		
 		else{
 			if(null==user){
-				request.setAttribute("error", "IDまたはパスワードが間違っています。");				
+				request.setAttribute("error", "IDまたはパスワードが間違っています。");	
+				//失敗してるからincrementする
+				manager.incrementCount(ip);
 				getServletContext().getRequestDispatcher("/jsp/common/Login.jsp").forward(request, response);
 			}
 			
 			else{
 				//失敗回数のリセット
-				LoginManager reset = new LoginManager();
-				reset.reset(ip);
+				manager.resetCount(ip);
 				HttpSession session = request.getSession();
 				
 				if(user.getRole().equals("customer") ){
