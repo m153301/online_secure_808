@@ -37,10 +37,12 @@
 		</form>
 		<br>
 		☆その他☆<br>
+
 		<a href="../customer/CustomerInfoChange.jsp">お客様情報の変更</a><br>
 		<form method = "post" action="../common/LogOutServlet">
 			<input type="submit" value="ログアウト">
 		</form>
 		<br>
+
 	</div>
 </body></html>

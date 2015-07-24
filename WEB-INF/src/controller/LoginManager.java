@@ -35,7 +35,9 @@ public class LoginManager{
 			return null;
 		
 	}
-	public Ip_lock overlap(String ip){
+	
+	//重複チェック
+	public Ip_lock checkOverlap(String ip){
 		AccLockDAO dao = new AccLockDAO();
 		this.connection = dao.createConnection();
 		int count = dao.overlap(ip, connection);
@@ -43,7 +45,7 @@ public class LoginManager{
 		this.connection = null;
 		//ipアドレスの登録があった場合
 		if(count != 0){
-			increment(ip);
+			incrementCount(ip);
 			
 		}
 		
@@ -53,29 +55,29 @@ public class LoginManager{
 		}
 		
 		//最後に失敗回数を持って帰る
-		Ip_lock fail_count = check(ip);
+		Ip_lock fail_count = getCount(ip);
 		return fail_count;
 		
 	}
 	
-	public Ip_lock check(String ip){
+	private Ip_lock getCount(String ip){
 		AccLockDAO dao = new AccLockDAO();
 		this.connection = dao.createConnection();
-		Ip_lock count = dao.check(ip, connection);
+		Ip_lock count = dao.getCount(ip, connection);
 		this.connection = null;
 		return count;
 	}
 	
-	public void ipRegist(String ip){
+	private void ipRegist(String ip){
 		AccLockDAO dao = new AccLockDAO();
 		this.connection = dao.createConnection();
-		dao.Regist(ip, connection);
+		dao.ipRegist(ip, connection);
 		dao.closeConnection(this.connection);
 		this.connection = null;
 	}
 	
 
-	public void increment(String ip){
+	public void incrementCount(String ip){
 		AccLockDAO dao = new AccLockDAO();
 		this.connection = dao.createConnection();
 		dao.increment(ip,connection);
@@ -83,7 +85,7 @@ public class LoginManager{
 		this.connection = null;
 	}
 	
-	public void reset(String ip){
+	public void resetCount(String ip){
 		AccLockDAO dao = new AccLockDAO();
 		this.connection = dao.createConnection();
 		dao.reset(ip, connection);
